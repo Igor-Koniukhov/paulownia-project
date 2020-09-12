@@ -31,10 +31,6 @@ footer {
 	flex-shrink: 0;
 }
 
-.top-ad {
-	padding-bottom: $gutter*1.5;
-}
-
 %point-leave {
 	content: '';
 	position: absolute;
@@ -1018,12 +1014,9 @@ nav.soc {
 	padding: 0;
 }
 
-.cat-list {
-	padding-top: $gutter;
-	background-color: #ffffff;
-}
 
-a.cat-list-item {
+
+.cat-list-item {
 	color: $text-color;
 	display: block;
 	text-decoration: none;
@@ -1168,7 +1161,6 @@ a.cat-list-item {
 
 .pagination-section {
 	padding: $gutter*2 0;
-	background-color: #f5f5f5;
 	&-first {
 		padding: $gutter 0;
 		background: none;
@@ -1232,8 +1224,6 @@ a.cat-list-item {
 		position: relative;
 	}
 }
-
-
 
 .page-header {
 	&-content {
@@ -1312,10 +1302,6 @@ a.cat-list-item {
 	.article-top-ad {
 		margin: $gutter 0;
 	}
-}
-
-.article-body {
-	padding-top: $gutter*2;
 }
 
 .embed-container {
@@ -1617,22 +1603,50 @@ details:hover summary::-webkit-details-marker:hover {
 		font-size: $midle-size-main-title;
 		color: lighten($dark-green, 5%);
 		font-weight: 900;
-
 	}
 }
-.telephon-number-position{
 
+.telephon-number-position {
 	position: absolute;
 	left: 0;
-	right:0;
+	right: 0;
 	margin: 0 auto;
 	top: .8rem;
-	.tel{
-		display:block;
+	.tel {
+		display: block;
 		color: #fff;
 	}
 }
 
+.wrapper-img {
+	padding: 15px 0;
+	.derzavniy-reestr {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin: auto auto;
+		box-shadow: 5px 4px 2px rgba($dark, 0.1);
+	}
+}
+
+.introduction {
+	&-body {
+		padding: 40px;
+	}
+	&-product {
+		padding: 0;
+	}
+}
+
+.header-all-posts {
+	.cat-header-block {
+		background-color: rgba($dark-green, .2);
+	}
+}
+
+.wrapper-content {
+	padding: 40px 0;
+}
 
 /*-sliders-----------*/
 @import "swiper";

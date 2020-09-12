@@ -11,12 +11,14 @@ $(function () {
 	$('.overlay').hover(function () {
 
 		if ($(this).hasClass('wood-music-tools')) {
-			$('.wood-music-tools').css('background-image', 'url(img/blog/pavlovnia-kvin/music-tools-pavl.jpg)');
+			$('.wood-music-tools').css('background-image', 'url(img/blog/pavlovnia-kvin/muzikalnii-instrumenti-iz-paulownii.png)');
 		}
 
 	}, function () {
 		$('.wood-music-tools').css('background-image', ' url(img/blog/pavlovnia-kvin/block_3-400x400.png)');
-	})
+	});
+
+
 
 
 	$('.search').on('click', function () {

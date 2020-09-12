@@ -302,8 +302,9 @@
 }
 
 .swiper-button-coverfow {
-	bottom: 2rem;
+	bottom: 0.5rem;
 	top: unset;
+	z-index:20;
 
 	&:after {
 		border-radius: 100%;
@@ -313,9 +314,9 @@
 
 	}
 	&.swiper-button-next {
-		right: 40%;
+		right: 39%;
 	}
 	&.swiper-button-prev {
-		left: 40%;
+		left: 39%;
 	}
 }
