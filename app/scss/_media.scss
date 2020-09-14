@@ -33,18 +33,15 @@
 	.block .link {
 		width: 80%;
 	}
-	.cat-header-block{
+	.cat-header-block {
 		padding: 20px 0;
-		h1.main-title{
+		.main-title {
 			font-size: 4rem;
-			&:before, &:after{
-				display:none;
-
+			&:before, &:after {
+				display: none;
 			}
-
 		}
 	}
-
 }
 
 // ≥768px
@@ -93,7 +90,6 @@
 			margin: 0;
 		}
 	}
-
 }
 
 // ≥576px
@@ -158,6 +154,11 @@
 	.top-line {
 		.search-field {
 			opacity: 1;
+		}
+	}
+	.cat-header-block {
+		.main-title {
+			font-size: 3rem;
 		}
 	}
 }

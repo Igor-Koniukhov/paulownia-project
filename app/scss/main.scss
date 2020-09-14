@@ -361,8 +361,6 @@ a {
 }
 
 section {
-	padding-top: $gutter;
-	padding-bottom: $gutter;
 	h2 {
 		text-transform: uppercase;
 		margin: 0;
@@ -564,38 +562,23 @@ section {
 }
 
 .item-news {
-	min-height: 280px;
+	min-height: 400px;
 	margin: $gutter/2 0;
 	color: $text-color;
 	&:hover {
 		color: $text-color;
 	}
 	&-content {
+		display: block;
 		border-left: #dfdfdf 1px solid;
 		border-bottom: #dfdfdf 1px solid;
 		z-index: 1;
-		position: relative;
+		position: absolute;
+		background-color: rgba(#fff, .3);
 		bottom: 0;
 		width: 80%;
-		min-height: 45%;
+		min-height: 35%;
 		padding: $gutter;
-		&:before {
-			content: '';
-			position: absolute;
-			background-color: #ffffff;
-			opacity: 0.5;
-			background-repeat: no-repeat;
-			background-size: cover;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			z-index: 0;
-		}
-		h3 {
-			position: relative;
-			z-index: 3;
-		}
 	}
 	h3 {
 		font-size: 17px;
@@ -687,7 +670,7 @@ section {
 		a {
 			color: #a4a7ab;
 			&:hover, &.hover {
-				color: #ffffff;
+				color: $text-color;
 			}
 		}
 	}
@@ -1013,8 +996,6 @@ nav.soc {
 	background-color: transparent;
 	padding: 0;
 }
-
-
 
 .cat-list-item {
 	color: $text-color;
@@ -1629,15 +1610,6 @@ details:hover summary::-webkit-details-marker:hover {
 	}
 }
 
-.introduction {
-	&-body {
-		padding: 40px;
-	}
-	&-product {
-		padding: 0;
-	}
-}
-
 .header-all-posts {
 	.cat-header-block {
 		background-color: rgba($dark-green, .2);
@@ -1645,7 +1617,19 @@ details:hover summary::-webkit-details-marker:hover {
 }
 
 .wrapper-content {
-	padding: 40px 0;
+	padding: 40px 40px;
+}
+
+.list-type-of-paulownij {
+	padding-left: 15px;
+	li {
+		a {
+			font-weight: 700;
+			color: $text-color;
+			text-decoration: underline;
+			text-decoration-color: $accent-orange;
+		}
+	}
 }
 
 /*-sliders-----------*/
