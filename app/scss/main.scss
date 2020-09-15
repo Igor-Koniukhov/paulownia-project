@@ -31,6 +31,53 @@ footer {
 	flex-shrink: 0;
 }
 
+section {
+	padding: $gutter/2 0;
+	h2 {
+		color: $dark-green;
+		text-transform: uppercase;
+		margin: 0;
+		font-size: 2rem;
+		font-weight: 800;
+	}
+	a {
+		&:hover {
+			/*color: $accent-orange;*/
+			text-decoration: underline;
+		}
+	}
+}
+
+h2 {
+	a {
+		display: block;
+		padding-top: $gutter/1.4;
+	}
+}
+
+h1, h2, h3 {
+	font-family: roboto-g, sans-serif;
+	font-weight: 800;
+}
+
+p, blockquote {
+	font-family: roboto-g, sans-serif;
+	font-size: 1rem;
+	line-height: 1.8rem;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+a {
+	color: $accent-orange;
+	&:hover:focus {
+		color: $accent-orange;
+	}
+}
+
 %point-leave {
 	content: '';
 	position: absolute;
@@ -130,17 +177,6 @@ body {
 	}
 }
 
-h1, h2, h3 {
-	font-family: roboto-g, sans-serif;
-	font-weight: 800;
-}
-
-p, blockquote {
-	font-family: roboto-g, sans-serif;
-	font-size: 1rem;
-	line-height: 1.8rem;
-}
-
 .img-responsive {
 	display: block;
 	/*margin: 0 auto;*/
@@ -153,18 +189,6 @@ p, blockquote {
 
 .text-center {
 	text-align: center;
-}
-
-b,
-strong {
-	font-weight: bold;
-}
-
-a {
-	color: $accent-orange;
-	&:hover:focus {
-		color: $accent-orange;
-	}
 }
 
 .top-line {
@@ -360,21 +384,6 @@ a {
 	margin-left: auto;
 }
 
-section {
-	h2 {
-		text-transform: uppercase;
-		margin: 0;
-		font-size: 23px;
-		font-weight: 800;
-	}
-	a {
-		&:hover {
-			/*color: $accent-orange;*/
-			text-decoration: underline;
-		}
-	}
-}
-
 .item-title {
 	margin: 0 auto;
 	min-height: 340px;
@@ -538,7 +547,6 @@ section {
 }
 
 .second-section {
-	padding: $gutter/2 0;
 	h2 {
 		a {
 			text-transform: uppercase;
@@ -607,12 +615,13 @@ section {
 	display: inline-block;
 }
 
-.dark-section {
+.green-section {
+	margin: 10px 0;
 	padding: 30px 0;
 	background-color: $green;
 	h2 {
 		a {
-			color: #ffffff;
+			color: $dark-green;
 		}
 	}
 }
@@ -666,7 +675,7 @@ section {
 		margin-bottom: 8px;
 		margin-top: 6px;
 	}
-	&.col-item-dark {
+	&.col-item-green {
 		a {
 			color: #a4a7ab;
 			&:hover, &.hover {
@@ -677,10 +686,8 @@ section {
 }
 
 .fourth-section {
-	background-color: #f5f5f5;
-	padding-top: 30px;
 	&-header {
-		margin-bottom: 10px;
+		margin: 10px 0;
 	}
 	.item-title {
 		min-height: 300px;
@@ -1147,6 +1154,7 @@ nav.soc {
 		background: none;
 		margin-bottom: $gutter;
 		border-bottom: 1px solid #dfdfdf;
+		border-top: 1px solid #dfdfdf;
 	}
 }
 
@@ -1402,6 +1410,7 @@ nav.soc {
 
 .main-title {
 	@extend %title-main;
+	line-height: 140%;
 }
 
 .title-description {
@@ -1421,7 +1430,6 @@ nav.soc {
 }
 
 .introduction {
-	padding: $gutter*1.5;
 	h1, h3 {
 		position: relative;
 		text-transform: uppercase;
@@ -1429,7 +1437,7 @@ nav.soc {
 	&__title {
 		position: relative;
 		color: $dark-green;
-		font-size: 2rem;
+		font-size: 1.5rem;
 		&:before {
 			@extend %orange-underline;
 			bottom: 0;
@@ -1514,7 +1522,8 @@ details:hover summary::-webkit-details-marker:hover {
 .main-title-v2 {
 	&:before {
 		@extend %orange-underline;
-		bottom: 0;
+		bottom: 20px;
+		right: unset;
 	}
 }
 
@@ -1536,11 +1545,6 @@ details:hover summary::-webkit-details-marker:hover {
 		bottom: 0;
 		width: 100%
 	}
-}
-
-.baner-pavlovnia-to-wood,
-.home-section-introduction {
-	padding: 0;
 }
 
 .wrapper-address {
@@ -1617,13 +1621,19 @@ details:hover summary::-webkit-details-marker:hover {
 }
 
 .wrapper-content {
-	padding: 40px 40px;
+	padding: $gutter*2 $gutter*2;
+}
+
+.wrapper-content_no-padding-l-r {
+	padding: 40px 0;
 }
 
 .list-type-of-paulownij {
+	list-style: none;
 	padding-left: 15px;
 	li {
 		a {
+			font-size: 1.2rem;
 			font-weight: 700;
 			color: $text-color;
 			text-decoration: underline;
@@ -1631,6 +1641,20 @@ details:hover summary::-webkit-details-marker:hover {
 		}
 	}
 }
+
+section.introduction-product{
+	padding-top: 0;
+}
+
+h2.markup-part-paragraph {
+	&:before {
+		width: 30%;
+		left: 0;
+		right: unset;
+		bottom: 20px;
+	}
+}
+
 
 /*-sliders-----------*/
 @import "swiper";

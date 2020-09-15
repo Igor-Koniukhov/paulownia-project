@@ -25,13 +25,16 @@
 }
 
 .swiper-container_black-cover {
+	background-color: darken($lite-gray, 2%);
+	box-shadow: 5px 4px 4px rgba(32,34,34,.3);
+	border: 1px solid rgba(32,34,34,.1);
 	overflow: hidden;
 	list-style: none;
-	padding: 0;
+	padding: 10px 0;
 	z-index: 1;
 	width: 100%;
-	height: 380px;
-	margin: 20px auto;
+	height: 400px;
+
 	position: relative;
 }
 
@@ -39,11 +42,22 @@
 	z-index: 10;
 	max-width: 380px;
 	width: 100%;
-	height: 380px;
+	height: 400px;
 	background-color: $green;
 	position: absolute;
 	left: 0;
 	bottom: 0;
+	&__logo{
+		font-family: baron-g,sans-serif;
+		font-weight: 700;
+		position: relative;
+		left:15px;
+		top: 10px;
+		.red-letter{
+			color: $accent;
+
+		}
+	}
 }
 
 .swiper-slide_cover-black {
@@ -59,9 +73,9 @@
 .wrapper-title {
 	display: flex;
 	position: absolute;
-	top: 60px;
-	left: 85px;
-	max-width: 140px;
+	top: 50px;
+	left: 20px;
+	max-width: 350px;
 	width: 100%;
 }
 
@@ -149,7 +163,7 @@
 	height: 62px;
 	left: 115px;
 	align-items: center;
-	bottom: 95px;
+	bottom: 145px;
 	box-sizing: border-box;
 }
 
@@ -212,9 +226,7 @@
 	opacity: 1;
 }
 
-.slider-section {
-	background-color: darken($lite-gray, 2%);
-}
+
 
 .swiper-slide_cover-black {
 	background-color: darken($lite-gray, 7%);

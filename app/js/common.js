@@ -1,3 +1,5 @@
+
+
 $(function () {
 	//variable which used in the photoChange function
 	let imgUrl = {
@@ -9,7 +11,9 @@ $(function () {
 		powderFromExtract: 'url(img/blog/pavlovnia-kvin/extract-listiev-pavlovnii.png)',
 		cowInPaulownia: 'url(img/blog/pavlovnia-kvin/telnok-est-paulowniu-1.png)',
 		pigEatingPaulownia: 'url(img/blog/pavlovnia-kvin/upotreblenie-paulowni-2i.png)',
-		cowsInTrees: 'url(img/blog/pavlovnia-kvin/krupniy-rogatiy-scot-kormitsiy-paulowniey.jpg)'
+		cowsInTrees: 'url(img/blog/pavlovnia-kvin/krupniy-rogatiy-scot-kormitsiy-paulowniey.jpg)',
+		beeOnPaulownia: 'url(img/blog/pavlovnia-kvin/pcheli-na-pavlovnii.png)',
+		honeyInCells: 'url(img/blog/pavlovnia-kvin/med-soty.png)'
 	};
 //function which change picture on hover
 	function photoChange(selector, adress1, adress2) {
@@ -24,11 +28,12 @@ $(function () {
 	photoChange('.krugliak', imgUrl.shanTongWood, imgUrl.krugliak);
 	photoChange('.medicine-drugs',imgUrl.powderFromExtract, imgUrl.extractLeave);
 	photoChange('.animals-eating',imgUrl.cowsInTrees, imgUrl.cowInPaulownia);
+	photoChange('.bees-eating',imgUrl.beeOnPaulownia, imgUrl.honeyInCells);
 
 
 	$('.logo-litera').map(function () {
 		let ths = $(this);
-		ths.html(ths.html().replace('i', '<span>i</span>'));
+		ths.html(ths.html().replace('i', '<span class="red-letter">i</span>'));
 	});
 	$('.markup-num').each(function () {
 		let ths = $(this);
@@ -41,7 +46,7 @@ $(function () {
 
 	});
 	$(document).keyup(function (e) {
-		if (e.keyCode == 27) {
+		if (e.keyCode === 27) {
 			$('.search-field').slideUp();
 		}
 	}).click(function () {
@@ -60,8 +65,8 @@ $(function () {
 
 
 	$('.col-item').hover(function () {
-		ths = $(this);
-		lnk = ths.closest('.col-item').find('h4 a');
+		 ths = $(this);
+		 lnk = ths.closest('.col-item').find('h4 a');
 
 		lnk.addClass('hover');
 	}, function () {
@@ -70,18 +75,22 @@ $(function () {
 
 	$('.swiper-button_custom').on('click', function () {
 		$(this).addClass('active');
-		var removeActive = function () {
+		let removeActive = function () {
 			$('.swiper-button_custom').removeClass('active');
 		};
-		var timeoutId = setTimeout(removeActive, 300);
+		let timeoutId = setTimeout(removeActive, 300);
 
 	});
+
+	/*let widthW = window.matchMedia('(max-width: 768px)')
+	sliderChange(widthW)
+	widthW.addEventListener(sliderChange, sliderChange)
 
 	function sliderChange(x) {
 
 		if (x.matches) {
 
-			var swiper1 = new Swiper('.container-swiper-coverflow', {
+			let swiper1 = new Swiper('.container-swiper-coverflow', {
 				pagination: {
 					el: '.swiper-pagination',
 					type: 'progressbar',
@@ -94,7 +103,55 @@ $(function () {
 
 
 		} else {
-			var swiper2 = new Swiper('.container-swiper-coverflow', {
+			let swiper2 = new Swiper('.container-swiper-coverflow', {
+				effect: 'coverflow',
+				grabCursor: true,
+				centeredSlides: true,
+				initialSlide: 2,
+				slidesPerView: 3,
+				coverflowEffect: {
+					rotate: 50,
+					stretch: 0,
+					depth: 400,
+					modifier: 1,
+					slideShadows: true,
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+				keyboard: {
+					enabled: true,
+				},
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			});
+		}
+
+	}
+*/
+
+
+	function sliderChange(x) {
+
+		if (x.matches) {
+
+			let swiper1 = new Swiper('.container-swiper-coverflow', {
+				pagination: {
+					el: '.swiper-pagination',
+					type: 'progressbar',
+				},
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			});
+
+
+		} else {
+			let swiper2 = new Swiper('.container-swiper-coverflow', {
 				effect: 'coverflow',
 				grabCursor: true,
 				centeredSlides: true,
@@ -123,10 +180,9 @@ $(function () {
 
 	}
 
-	var widthWindow = window.matchMedia('(max-width: 768px)')
-	sliderChange(widthWindow)
-	widthWindow.addEventListener(sliderChange())
-
+	let widthW = window.matchMedia('(max-width: 768px)')
+	sliderChange(widthW)
+	widthW.addEventListener(sliderChange, sliderChange)
 
 	$("body").prognroll({
 		height: 3,

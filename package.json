@@ -23,7 +23,5 @@
 		"gulp-sass": "^4.1.0",
 		"gulp-uglify": "^3.0.2"
 	},
-	"dependencies": {
-		"swiper": "^6.2.0"
-	}
+	"dependencies": {}
 }
