@@ -269,6 +269,14 @@
 		&:hover {
 			text-decoration: underline;
 		}
+		ul{
+			li{
+				list-style: none;
+				text-decoration: underline;
+				text-decoration-color: $accent-orange;
+
+			}
+		}
 	}
 }
 

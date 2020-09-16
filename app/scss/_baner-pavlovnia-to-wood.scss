@@ -2,9 +2,16 @@
 
 .baner-pavlovnia-to-wood {
 	padding: 0;
-	margin-bottom: -$gutter/2;
 }
-
+section.home-section-introduction {
+	padding-top: 0;
+	.main-title_dark{
+		color: $dark-green;
+		font-family: roboto-g, sans-serif;
+		letter-spacing: unset;
+		font-weight: 600;
+	}
+}
 .block {
 	position: absolute;
 	width: 60%;
@@ -13,7 +20,7 @@
 }
 
 .custom-section {
-	border: 0 ;
+	border: 0;
 	background-color: #f5f5f5;
 	padding: 0;
 	position: relative;
@@ -103,8 +110,6 @@
 		}
 	}
 }
-
-
 
 .block {
 	.link {

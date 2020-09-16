@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+
 @import "_mixins/font-face";
 
 
@@ -7,4 +10,6 @@
 @include font-face("roboto-g", "../fonts/RobotoMedium/RobotoMedium", 500);
 @include font-face("roboto-g", "../fonts/RobotoBlack/RobotoBlack", 800);
 @include font-face("baron-g", "../fonts/BaronBold/BaronBold", bold);
-@include font-face("baron-g", "../fonts/BaronBlack/BaronBlack", 800);
+@include font-face("baron-g", "../fonts/BaronBlack/BaronBlack", 200);
+
+

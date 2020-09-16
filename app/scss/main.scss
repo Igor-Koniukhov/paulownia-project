@@ -78,29 +78,15 @@ a {
 	}
 }
 
-%point-leave {
-	content: '';
-	position: absolute;
-	background-repeat: no-repeat;
-	width: 24px;
-	height: 23px;
-	background-image: url(../img/leave-paulownij-min-2.png);
-	border: 3px solid rgba(0, 0, 0, .5);
-	border-radius: 50px;
-	padding: 12px;
-	text-shadow: 3px 2px 3px rgba(255, 255, 255, .2);
-	left: 7.56rem;
-	opacity: 1;
-	top: 0;
-}
-
 %title-main {
+	font-family: $header-font;
 	position: relative;
 	text-transform: uppercase;
 	font-size: $midle-size-main-title;
 	padding: 0;
 	line-height: 100%;
-	color: $dark-green;
+	font-weight: 300;
+	color: #fff;
 }
 
 %title-main-shadow {
@@ -193,48 +179,52 @@ body {
 
 .top-line {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: $green;
 	position: relative;
-	height: 65px;
+	background-color: $dark-green;
+	z-index: 5;
+	min-height: 65px;
 	&:before {
 		@include img-background($leave2, $opacity);
 	}
 	.logo {
-		font-family: baron-g, sans-serif;
-		color: $dark;
-		font-size: 1rem;
-		font-weight: 700;
-		display: inline-block;
+		text-transform: uppercase;
+		display: flex;
+		align-items: center;
+		line-height: normal;
+		color: $header-title-color;
+		font-size: 1.5rem;
+		font-weight: 400;
 		text-decoration: none;
-		position: absolute;
-		padding-left: 30px;
+		padding-left: 15px;
 		left: 0;
-		line-height: 65px;
 		&:hover:focus {
 			text-decoration: none;
 			color: #ffffff;
 		}
 		&.logo-litera {
+			font-family: Oswald, sans-serif;
+
 		}
-		span {
+		.red-litera {
+			text-transform: lowercase;
+			font-weight: 700;
+			font-size: 1.2em;
 			color: $accent-orange;
 		}
 	}
 	.search {
 		display: flex;
 		position: absolute;
-		margin-right: 30px;
+		margin-right: 20px;
 		right: 0;
-		color: #5c5e61;
+		color: $header-title-color;
 		cursor: pointer;
-		top: 50% - 14;
+		top: 25.3px;
 		transition: color .25s ease;
 		z-index: 5;
 		line-height: normal;
 		&:hover {
-			color: $dark;
+			color: lighten($accent-orange, 5%);
 		}
 		&:before {
 			display: inline-block;
@@ -286,9 +276,9 @@ body {
 			&.active, &:hover {
 				a {
 					position: relative;
-					color: $dark;
-					background-color: lighten($green, 2%);
-					box-shadow: 5px 4px 4px rgba($dark, 0.5);
+					color: $header-title-color;
+					/*background-color: lighten($green, 2%);
+					box-shadow: 5px 4px 4px rgba($dark, 0.5);*/
 					&::before {
 						@extend %orange-underline;
 						bottom: 20px;
@@ -299,13 +289,13 @@ body {
 				position: relative;
 				text-decoration: none;
 				display: block;
-				font-family: Roboto, sans-serif;
+				font-family: $header-font, sans-serif;
 				padding: 0 15px;
-				font-weight: 400;
-				font-size: 14px;
+				font-weight: $header-font-weight;
+				font-size: .9rem;
 				line-height: 65px;
-				//text-transform: uppercase;
-				color: $dark;
+				text-transform: uppercase;
+				color: $header-title-color;
 				transition: color .25s ease, background-color .25s ease;
 			}
 		}
@@ -313,29 +303,45 @@ body {
 }
 
 .mobile-menu-button {
-	color: $dark;
-	text-align: center;
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	color: #fff;
 	cursor: pointer;
-	line-height: 65px;
 	font-size: 17px;
 	text-transform: uppercase;
 	font-weight: bold;
 	white-space: nowrap;
 	display: none;
-	position: relative;
+	position: absolute;
 	z-index: 5;
+	transition: 0.25s ease;
 	.fa.fa-bars {
-		color: darken($accent-orange, 20%);
+		width:19px;
+		height:19px;
+		color: $accent-orange;
+		align-items: center;
+		position: relative;
+		&:before{
+			font-size: 21px;
+			position:absolute;
+			bottom:-2px;
+			left:0;
+		}
 	}
-	&:hover {
-		color: darken($accent-orange, 20%);
-	}
+
 }
 
 .mobile-menu {
+	position: relative;
 	display: none;
 	background-color: lighten($green, 3%);
 	border-top: lighten($green, 5%) 1px solid;
+	&:before{
+		@include img-background($leave2, 0.2);
+	}
 	.top-menu {
 		display: block;
 	}
@@ -855,8 +861,8 @@ body {
 			&.active {
 				a {
 					display: block;
-					color: $dark;
-					background-color: lighten($dark-green, 2%);
+					/*color: $dark;
+					background-color: lighten($dark-green, 2%);*/
 					&::before {
 						@extend %orange-underline;
 						bottom: 10px;
@@ -864,13 +870,13 @@ body {
 				}
 			}
 			a {
-				color: $dark;
+				color: $header-title-color;
 				display: block;
-				font-weight: 400;
+				font-weight: $header-font-weight;
 				font-size: 15px;
 				padding: 0 10px;
 				&:hover {
-					background-color: lighten($dark-green, 2%);
+					/*background-color: lighten($dark-green, 2%);*/
 					&:before {
 						@extend %orange-underline;
 						bottom: 10px;
@@ -939,26 +945,30 @@ nav.soc {
 	}
 	&-block {
 		position: relative;
-		padding: 40px 0;
+		display: flex;
+		align-items: center;
+		height: 100px;
+		padding: 12px;
 		color: #ffffff;
-		background-color: rgba($green, .3);
+		background-color: rgba($green, .1);
+		.logo.logo-litera{
+			display: none;
+		}
+
 		.main-title {
 			@extend %title-main;
 			@extend %title-main-shadow;
 			text-transform: lowercase;
+			color: $header-title-color;
 			&_decor-leaves {
 				font-size: $big-size-main-title;
-				&:before {
-					@extend %point-leave;
-				}
-				&:after {
-					@extend %point-leave;
-					left: 28rem;
-				}
 			}
 			span {
 				color: darken($accent-orange, 20%);
 			}
+		}
+		&.main-title_dark {
+			color: $text-color;
 		}
 		&::before {
 			content: '';
@@ -971,6 +981,11 @@ nav.soc {
 			bottom: 10px;
 			left: 10px;
 			right: 10px;
+		}
+		p {
+			font-family: $header-font;
+			font-weight: 200;
+			letter-spacing: 1px;
 		}
 		p, h1, h2 {
 			margin: 0;
@@ -987,6 +1002,14 @@ nav.soc {
 				opacity: 0.25;
 			}
 		}
+	}
+}
+
+h1.main-title {
+	.main-title_decor-leaves.logo-litera {
+		font-family: baron-g, sans-serif;
+		font-size: $big-size-main-title;
+		position: relative;
 	}
 }
 
@@ -1207,8 +1230,8 @@ nav.soc {
 			background-color: transparent;
 			background-image: linear-gradient(rgba(#000, .2), rgba(#000, .7));
 		}
-		height: 80vh;
-		min-height: 460px;
+		height: 60vh;
+		min-height: 18rem;
 		color: #ffffff;
 		position: relative;
 	}
@@ -1377,21 +1400,24 @@ nav.soc {
 }
 
 .contact-field {
+	position: relative;
 	z-index: 4;
 	display: flex;
-	flex-direction: column;
-	max-width: 300px;
-	position: absolute;
-	top: 0;
-	right: 60px;
-	height: 65px;
-	justify-content: center;
+	max-width: 280px;
+	width: 100%;
+	margin-left: auto;
+	justify-content: space-between;
 	a {
-		color: darken($accent-orange, 20%);
-		font-size: 13px;
+		display: inline-flex;
+		max-width: 150px;
+		color: $header-title-color;
+		font-family: $header-font;
+		font-weight: 200;
+		font-size: 0.9rem;
+		letter-spacing: 1px;
 		&:hover {
 			text-decoration: none;
-			color: $accent;
+			color: $accent-orange;
 		}
 	}
 	span {
@@ -1548,7 +1574,7 @@ details:hover summary::-webkit-details-marker:hover {
 }
 
 .wrapper-address {
-	width: 350px;
+	width: 300px;
 	border: 1px solid red;
 	padding: 10px;
 	font-size: 1.2rem;
@@ -1642,7 +1668,7 @@ details:hover summary::-webkit-details-marker:hover {
 	}
 }
 
-section.introduction-product{
+section.introduction-product {
 	padding-top: 0;
 }
 
@@ -1654,7 +1680,6 @@ h2.markup-part-paragraph {
 		bottom: 20px;
 	}
 }
-
 
 /*-sliders-----------*/
 @import "swiper";

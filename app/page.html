@@ -3,7 +3,7 @@
 
 <head>
 
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<base href="/">
 
 	<title>О НАС</title>
@@ -16,7 +16,7 @@
 	<!-- Template Basic Images Start -->
 	<meta content="img/kvinerji.jpg" property="og:image">
 	<link href="img/favicon/icon-leaves.png" rel="icon">
-	<link href="" rel="apple-touch-icon" sizes="180x180">
+
 	<!-- Template Basic Images End -->
 
 	<!-- Custom Browsers Color Start -->
@@ -28,58 +28,45 @@
 </head>
 
 <body class="ispage">
-<header class="top-line">
-	<a href="" class="logo logo-litera">GeekTOP</a>
-	<div class="search-wrap">
-		<div class="search" title="Поиск по сайту...">
-			<div class="fa fa-search"></div>
+<header class="pattern pattern-cat-header">
+	<div class="cat-header overlay" style="background-image: url(img/products/slider-2/forest-1.jpg)">
+		<div class="container-fluid">
+			<div class="cat-header-block text-center">
+				<div class="logo logo-litera">kvinerdji</div>
+				<h1 class="main-title main-title_shadow-decor"></h1>
+				<div class="contact-field">
+					<a class="tel" href="tel:+380978526935"> +38(097)852-69-35</a>
+					<a class="mail" href="mailto:ban1986x@gmail.com"> ban1986x@gmail.com</a>
+				</div>
+				<p></p>
+			</div>
 		</div>
-		<div class="search-field">
-			<form action="/search.html" id="cse-search-box">
-				<input type="hidden" name="cx" value="partner-pub-xxx:xxx"/>
-				<input type="hidden" name="cof" value="FORID:10"/>
-				<input type="hidden" name="ie" value="UTF-8"/>
-				<input type="text" name="q" placeholder="Поиск по сайту..."/>
-			</form>
-		</div>
-
 	</div>
+</header>
+<header class="top-line">
+	<div class="logo logo-litera">kvinerdji</div>
 	<div class="mobile-menu-button"><i class="fa fa-bars"></i> Меню</div>
 	<nav class="main-menu top-menu">
 		<ul>
 			<li><a href="index.html">Главная</a></li>
-			<li><a href="product.html">О продукте</a></li>
-			<li><a href="all-posts.html">Статьи</a></li>
+			<li class="active"><a href="product.html">О продукте</a></li>
+			<li ><a href="all-posts.html">Статьи</a></li>
 			<li><a href="questions.html">ЧЗВ</a></li>
 			<li><a href="about.html">О сайте</a></li>
 			<li><a href="contacts.html">Контакты</a></li>
 		</ul>
 	</nav>
-</header>
-<header class="page-header overlay" style="background-image: url(img/1-pav-banner.jpg)">
-	<div class="page-header-content">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-7 col-md-8">
-					<div class="page-header-meta">
-						<a href="#" class="page-category-link">Новости IT</a>
-						<span class="date">01/09/2020</span>
-						<h1>Новые смартфоны покорили весь мир</h1>
-						<div class="item-social">
-							<div class="item-comments" title="Количество комментариев">
-								<i class="fa fa-comment"></i><a href="#disqus_thread" class="item-comments-count">26</a>
-							</div>
-							<div class="fa fa-share-alt" title="Поделиться в соц. сетях"></div>
-							<div class="likely likely-custom"
-									data-media="img/blog/electronics/1.jpg"
-									data-title="Новые смартфоны покорили поклонников мобильной индустрии">
-								<div class="facebook" title="Поделиться в Facebook">Facebook</div>
-								<div class="twitter" title="Поделиться в twitter">Twitter</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+	<div class="search-wrap">
+		<div class="search" title="Поиск по сайту...">
+			<div class="fa fa-search"></div>
+		</div>
+		<div class="search-field">
+			<form action="search.html" id="cse-search-box">
+				<input name="cx" type="hidden" value="partner-pub-xxx:xxx"/>
+				<input name="cof" type="hidden" value="FORID:10"/>
+				<input name="ie" type="hidden" value="UTF-8"/>
+				<input name="q" placeholder="Поиск по сайту..." type="text"/>
+			</form>
 		</div>
 	</div>
 </header>
@@ -98,9 +85,7 @@
 						</ul>
 					</nav>
 					<div class="article-body">
-						<div class="ad article-top-ad">
-							<img src="img/ad-horizontal.jpg" alt="alt" class="img-responsive">
-						</div>
+
 						<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores debitis distinctio ea earum
 						            eveniet excepturi exercitationem illo impedit laboriosam laborum nostrum nulla, officia quam quidem quod
 						            recusandae repellendus sint sunt temporibus totam veritatis voluptatem voluptatibus! Autem debitis dolorum
@@ -114,7 +99,7 @@
 						   sequi soluta tempora ullam unde velit voluptatum! Accusamus inventore iure sint tenetur.</p>
 
 						<div class='embed-container'>
-							<iframe src='https://www.youtube.com/embed//oH2RJNILkLs'  allowfullscreen></iframe>
+							<iframe src='product.html'  allowfullscreen></iframe>
 						</div>
 					</div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto distinctio magni quo, repellat sit voluptatum? Earum
@@ -158,69 +143,79 @@
 			<div class="col-md-4">
 				<aside class="main-aside">
 					<div class="aside-box">
-						<img class="img-responsive" src="img/ad-vertical.jpg" alt="alt">
-					</div>
-
-					<div class="aside-box">
 						<div class="latest-box">
 							<div class="lb-header">Последние статьи:</div>
 							<div class="lb-list">
 								<div class="lb-item">
-									<a class="lb-catname" href="#">Электроника</a>
+									<a class="lb-catname" href="#">Новые саженцы</a>
 									<div class="lb-body">
-										<a href="#" class="lb-item-header">Это не Android, а что то потрясающее!</a>
+										<a class="lb-item-header" href="#">В продаже появились новые саженцы
+										                                   кукурузы по 3 гривни за кг</a>
 										<div class="lb-footer">
 											<div class="item-comments" title="Количество комментариев">
-												<i class="fa fa-comment"></i><a class="item-comments-count" href="#disqus_thread">26</a><span
+												<i class="fa fa-comment"></i><a class="item-comments-count"
+													href="#disqus_thread">26</a><span
 													class="date">28/08/2020</span>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="lb-item">
-									<a class="lb-catname" href="#">Обзоры</a>
+									<a class="lb-catname" href="#">Пчеловодство в квартирах</a>
 									<div class="lb-body">
-										<a href="#" class="lb-item-header">Потрясающе! Неоднократно вы слышали свой внутренний голос, в тот момент
-										                                   когда брали его в руки. Новый логотип Айфона - укущенная тыква...</a>
+										<a class="lb-item-header" href="#">Виртуальные пчелы научились
+										                                   генерировать сотовый мед, который в
+										                                   дальнейшем станет прототипом гибких
+										                                   экранов лаптопов</a>
 										<div class="lb-footer">
 											<div class="item-comments" title="Количество комментариев">
-												<i class="fa fa-comment"></i><a class="item-comments-count" href="#disqus_thread">26</a><span
+												<i class="fa fa-comment"></i><a class="item-comments-count"
+													href="#disqus_thread">26</a><span
 													class="date">28/08/2020</span>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="lb-item">
-									<a class="lb-catname" href="#">Новости IT</a>
+									<a class="lb-catname" href="#">Вести с полей</a>
 									<div class="lb-body">
-										<a href="#" class="lb-item-header">Это не Android, а что то потрясающее!</a>
+										<a class="lb-item-header" href="#">Загони воробья на коленках в поле и
+										                                   получи скидку по промокоду</a>
 										<div class="lb-footer">
 											<div class="item-comments" title="Количество комментариев">
-												<i class="fa fa-comment"></i><a class="item-comments-count" href="#disqus_thread">26</a><span
+												<i class="fa fa-comment"></i><a class="item-comments-count"
+													href="#disqus_thread">26</a><span
 													class="date">28/08/2020</span>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="lb-item">
-									<a class="lb-catname" href="#">Лайфхаки</a>
+									<a class="lb-catname" href="#">Не кормите крокодила цветами Павловнии</a>
 									<div class="lb-body">
-										<a href="#" class="lb-item-header">Это не Android, а что то потрясающее!</a>
+										<a class="lb-item-header" href="#">Крокодил Гена признался, что очень
+										                                   долго был зависим от цветков
+										                                   Павловнии, но потом перешел на
+										                                   древесину</a>
 										<div class="lb-footer">
 											<div class="item-comments" title="Количество комментариев">
-												<i class="fa fa-comment"></i><a class="item-comments-count" href="#disqus_thread">26</a><span
+												<i class="fa fa-comment"></i><a class="item-comments-count"
+													href="#disqus_thread">26</a><span
 													class="date">28/08/2020</span>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="lb-item">
-									<a class="lb-catname" href="#">DIY</a>
+									<a class="lb-catname" href="#">Будь умнее придумай сам</a>
 									<div class="lb-body">
-										<a href="#" class="lb-item-header">Это не Android, а что то потрясающее!</a>
+										<a class="lb-item-header" href="#">Когда нибудь здесь появятся
+										                                   потресающие заголовки о том как тыква
+										                                   превращается в карету</a>
 										<div class="lb-footer">
 											<div class="item-comments" title="Количество комментариев">
-												<i class="fa fa-comment"></i><a class="item-comments-count" href="#disqus_thread">26</a><span
+												<i class="fa fa-comment"></i><a class="item-comments-count"
+													href="#disqus_thread">26</a><span
 													class="date">28/08/2020</span>
 											</div>
 										</div>
@@ -228,9 +223,6 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="aside-box">
-						<img src="img/vk-witget.jpg" alt="alt" class="img-responsive">
 					</div>
 					<div class="aside-box">
 						latest comments

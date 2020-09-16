@@ -33,7 +33,7 @@ $(function () {
 
 	$('.logo-litera').map(function () {
 		let ths = $(this);
-		ths.html(ths.html().replace('i', '<span class="red-letter">i</span>'));
+		ths.html(ths.html().replace('i', '<span class="red-litera">i</span>'));
 	});
 	$('.markup-num').each(function () {
 		let ths = $(this);
@@ -60,8 +60,9 @@ $(function () {
 	$('.mobile-menu-button').click(function () {
 		$('.mobile-menu').stop().slideToggle();
 	});
-	$('.cat-header-block').after('<div class="telephon-number-position d-sm-none"></div>');
-	$('.tel').clone().appendTo('.telephon-number-position');
+
+	/*$('.cat-header-block').after('<div class="telephon-number-position d-sm-none"></div>');
+	$('.tel').clone().appendTo('.telephon-number-position');*/
 
 
 	$('.col-item').hover(function () {
@@ -82,56 +83,6 @@ $(function () {
 
 	});
 
-	/*let widthW = window.matchMedia('(max-width: 768px)')
-	sliderChange(widthW)
-	widthW.addEventListener(sliderChange, sliderChange)
-
-	function sliderChange(x) {
-
-		if (x.matches) {
-
-			let swiper1 = new Swiper('.container-swiper-coverflow', {
-				pagination: {
-					el: '.swiper-pagination',
-					type: 'progressbar',
-				},
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-			});
-
-
-		} else {
-			let swiper2 = new Swiper('.container-swiper-coverflow', {
-				effect: 'coverflow',
-				grabCursor: true,
-				centeredSlides: true,
-				initialSlide: 2,
-				slidesPerView: 3,
-				coverflowEffect: {
-					rotate: 50,
-					stretch: 0,
-					depth: 400,
-					modifier: 1,
-					slideShadows: true,
-				},
-				pagination: {
-					el: '.swiper-pagination',
-					clickable: true,
-				},
-				keyboard: {
-					enabled: true,
-				},
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-			});
-		}
-
-	}
-*/
 
 
 	function sliderChange(x) {
