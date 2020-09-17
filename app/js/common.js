@@ -1,5 +1,3 @@
-
-
 $(function () {
 	//variable which used in the photoChange function
 	let imgUrl = {
@@ -15,20 +13,21 @@ $(function () {
 		beeOnPaulownia: 'url(img/blog/pavlovnia-kvin/pcheli-na-pavlovnii.png)',
 		honeyInCells: 'url(img/blog/pavlovnia-kvin/med-soty.png)'
 	};
+
 //function which change picture on hover
 	function photoChange(selector, adress1, adress2) {
 		$(selector).hover(function () {
-			$(selector).css('background-image',  adress1);
+			$(selector).css('background-image', adress1);
 		}, function () {
 			$(selector).css('background-image', adress2);
 		});
 	};
 
-	photoChange('.wood-music-tools',imgUrl.woodMade, imgUrl.musicTool);
+	photoChange('.wood-music-tools', imgUrl.woodMade, imgUrl.musicTool);
 	photoChange('.krugliak', imgUrl.shanTongWood, imgUrl.krugliak);
-	photoChange('.medicine-drugs',imgUrl.powderFromExtract, imgUrl.extractLeave);
-	photoChange('.animals-eating',imgUrl.cowsInTrees, imgUrl.cowInPaulownia);
-	photoChange('.bees-eating',imgUrl.beeOnPaulownia, imgUrl.honeyInCells);
+	photoChange('.medicine-drugs', imgUrl.powderFromExtract, imgUrl.extractLeave);
+	photoChange('.animals-eating', imgUrl.cowsInTrees, imgUrl.cowInPaulownia);
+	photoChange('.bees-eating', imgUrl.beeOnPaulownia, imgUrl.honeyInCells);
 
 
 	$('.logo-litera').map(function () {
@@ -43,6 +42,7 @@ $(function () {
 	$('.search').on('click', function () {
 		$('.search-field').stop().slideToggle();
 		$('.search-field input[type=text]').focus();
+		$('.mobile-menu').stop().slideUp();
 
 	});
 	$(document).keyup(function (e) {
@@ -66,8 +66,8 @@ $(function () {
 
 
 	$('.col-item').hover(function () {
-		 ths = $(this);
-		 lnk = ths.closest('.col-item').find('h4 a');
+		ths = $(this);
+		lnk = ths.closest('.col-item').find('h4 a');
 
 		lnk.addClass('hover');
 	}, function () {
@@ -82,7 +82,6 @@ $(function () {
 		let timeoutId = setTimeout(removeActive, 300);
 
 	});
-
 
 
 	function sliderChange(x) {
@@ -168,8 +167,30 @@ var swiper = new Swiper('.swiper-container_black-cover', {
 });
 
 
+let topBlock = document.querySelector('.top-line');
+let offsetTopBlock = topBlock.offsetTop;
+/*let block = document.querySelector('.top-line');*/
 
 
+$(window).on('scroll', function(){
+	$('.mobile-menu').removeClass('fixed-on-hover').slideUp();
 
+
+	if($(this).scrollTop() >= offsetTopBlock){
+		$('.cat-header-block_first').css({'margin-bottom':'90px','transition': '.3s all ease;'});
+
+		$(topBlock).addClass('fixed')
+		$(".mobile-menu").addClass('fixed');
+
+	}else{
+		$(topBlock).removeClass('fixed');
+		$(".mobile-menu").removeClass('fixed');
+		$('.cat-header-block_first').css({'margin-bottom':'0','transition': '.3s all ease;'});
+	};
+});
+
+$("header").hover(function(){
+	$('.mobile-menu').addClass('fixed-on-hover');
+})
 
 

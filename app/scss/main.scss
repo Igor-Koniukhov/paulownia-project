@@ -31,6 +31,10 @@ footer {
 	flex-shrink: 0;
 }
 
+h3 > a {
+	color: $text-color;
+}
+
 section {
 	padding: $gutter/2 0;
 	h2 {
@@ -180,13 +184,25 @@ body {
 .top-line {
 	display: flex;
 	position: relative;
+	width: 100%;
 	background-color: $dark-green;
-	z-index: 5;
+	z-index: 100;
 	min-height: 65px;
 	&:before {
 		@include img-background($leave2, $opacity);
 	}
+	&.fixed {
+		transition: .3s all ease;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		display: flex;
+		flex-shrink: 1;
+	}
 	.logo {
+		margin-right: -108px; // was added for better dislocation of button-menu with margin:0 auto
 		text-transform: uppercase;
 		display: flex;
 		align-items: center;
@@ -203,7 +219,6 @@ body {
 		}
 		&.logo-litera {
 			font-family: Oswald, sans-serif;
-
 		}
 		.red-litera {
 			text-transform: lowercase;
@@ -239,7 +254,7 @@ body {
 		opacity: 0.8;
 		width: 100%;
 		border-top: lighten($green, 3%) 1px solid;
-		z-index: 4;
+		z-index: 104;
 		display: none;
 		input[type=text] {
 			width: 100%;
@@ -304,10 +319,6 @@ body {
 
 .mobile-menu-button {
 	margin: 0 auto;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
 	color: #fff;
 	cursor: pointer;
 	font-size: 17px;
@@ -315,23 +326,21 @@ body {
 	font-weight: bold;
 	white-space: nowrap;
 	display: none;
-	position: absolute;
-	z-index: 5;
+	z-index: 100;
 	transition: 0.25s ease;
 	.fa.fa-bars {
-		width:19px;
-		height:19px;
+		width: 19px;
+		height: 19px;
 		color: $accent-orange;
 		align-items: center;
 		position: relative;
-		&:before{
+		&:before {
 			font-size: 21px;
-			position:absolute;
-			bottom:-2px;
-			left:0;
+			position: absolute;
+			bottom: -2px;
+			left: 0;
 		}
 	}
-
 }
 
 .mobile-menu {
@@ -339,8 +348,15 @@ body {
 	display: none;
 	background-color: lighten($green, 3%);
 	border-top: lighten($green, 5%) 1px solid;
-	&:before{
+	&:before {
 		@include img-background($leave2, 0.2);
+	}
+	&.fixed {
+		position: fixed;
+		width: 100%;
+		top: 65px;
+		left: 0;
+		z-index: 100;
 	}
 	.top-menu {
 		display: block;
@@ -351,6 +367,7 @@ body {
 		li {
 			display: block;
 			text-align: center;
+			z-index: 100;
 			&.active {
 				a {
 					&::before {
@@ -376,6 +393,14 @@ body {
 			}
 		}
 	}
+}
+
+.fixed-on-hover {
+	top: 165px;
+	width: 100%;
+	z-index: 100;
+	height: auto;
+	position: fixed;
 }
 
 .aside-box {
@@ -951,10 +976,9 @@ nav.soc {
 		padding: 12px;
 		color: #ffffff;
 		background-color: rgba($green, .1);
-		.logo.logo-litera{
+		.logo.logo-litera {
 			display: none;
 		}
-
 		.main-title {
 			@extend %title-main;
 			@extend %title-main-shadow;
@@ -1335,24 +1359,29 @@ h1.main-title {
 	border: 0;
 }
 
-.article-body {
-	p {
-		margin: 25px 0;
-		line-height: 1.6;
+.article {
+	&__title {
+		color: $green;
 	}
-	img {
-		display: block;
-		max-width: 100%;
-		height: auto;
-		margin: auto;
-	}
-	h2, h3, h4, h5, h6 {
-		line-height: 1.2;
-	}
-	ul, ol {
-		padding-left: $gutter;
-		li {
-			margin: 10px 0;
+	&-body {
+		p {
+			margin: 25px 0;
+			line-height: 1.6;
+		}
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+			margin: auto;
+		}
+		h2, h3, h4, h5, h6 {
+			line-height: 1.2;
+		}
+		ul, ol {
+			padding-left: $gutter;
+			li {
+				margin: 10px 0;
+			}
 		}
 	}
 }
@@ -1453,6 +1482,20 @@ h1.main-title {
 		bottom: 5px;
 		margin: 0;
 	}
+}
+
+.title-description-no-underline {
+	display: inline-block;
+	position: relative;
+	font-size: 0.8rem;
+	color: $text-color;
+	padding-bottom: 10px;
+	line-height: 100%;
+	letter-spacing: 2px;
+}
+
+.color-green {
+	color: $green;
 }
 
 .introduction {
