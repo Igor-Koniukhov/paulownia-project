@@ -1,0 +1,43 @@
+<section class="slider-section">
+	<div class="swiper-container swiper-container_black-cover ">
+		<div class="cover-black pattern">
+			<span class="cover-black__logo logo-litera">Kvinerdji</span>
+		</div>
+		<!-- Add Pagination -->
+
+		<!-- Add Arrows -->
+		<div class="wrapper-button">
+			<div class="swiper-button-next swiper-button_custom"></div>
+			<div class="swiper-button-prev swiper-button_custom"></div>
+		</div>
+
+		<div class="wrapper-title">
+			<h2 class="main-title-v2 ">покупайте у нас :</h2>
+		</div>
+		<div class="swiper-wrapper swiper-wrapper_black-cover">
+			<div class="swiper-slide empty1"></div>
+
+
+			{% for post in site.categories.product limit: 20 offset: 0 %}
+			{% include /slider-section-item.html %}
+			{% endfor %}
+
+
+
+			<div class="swiper-slide swiper-slide_cover-black ">
+				<a href="#" title="Узнать больше о саженцах Павловнии">
+					<h3>Павловния Квинерджи</h3>
+
+					<div class="product n09"
+							style="background-image:url(../img/products/slider-1/block_1-400x400.png)">
+
+					</div>
+					<p class="text-slider"> Живые клетки бактерий Azotobacter chroococcum улучшенного штаму AC 39 с
+					                        титром не менее 1х109 КОУ/мл
+					                        их продукты метаболизма</p>
+				</a>
+			</div>
+		</div>
+		<div class="swiper-pagination swiper-pagination_left-red-active"></div>
+	</div>
+</section>

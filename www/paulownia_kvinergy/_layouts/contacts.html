@@ -1,0 +1,81 @@
+{% include /head.html %}
+{% include /header-first-position.html %}
+{% include /header-second-position.html %}
+<section class="page-header overlay" style="background-image: url(img/products/slider-2/forest-1-3.jpg)">
+	<div class="page-header-content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-5 ">
+					<div class="wrapper-address pattern">
+						<address>
+							kvinerji.com.ua, ООО Чарли<br>
+							                                  ул. Валентиновская, 64-б<br>
+							                                  г. Харьков<br>
+							<abbr title="Phone">Тел:</abbr> <a class="tel" href="tel:{{ site.telephone }}">{{ site.telephone }}
+							</a>
+						</address>
+
+						<address>
+							<strong>Бондаренко Артём</strong><br>
+
+							<a class="mail" href="mailto:{{ site.email }}">{{ site.email }} </a>
+						</address>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<main>
+<section class="contact-section">
+
+
+	<div class="container-cust ">
+		<div class="row ">
+			<div class="col-12 text-center pt-md-4 pt-sm-2">
+				<div class="write-to-us ">Напишите нам {{ site.categories.product.title }}</div>
+				<p class="title-description">{{ page.description }}</p>
+			</div>
+			<div class="col-9 mx-auto">
+				<div class="wrapper-form">
+
+					<form>
+						<div class="form-group">
+							<label for="exampleFormControlInput1">Email address</label>
+							<input class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
+									type="email">
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Example select</label>
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect2">Example multiple select</label>
+							<select class="form-control" id="exampleFormControlSelect2" multiple>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlTextarea1">Example textarea</label>
+							<textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+</main>
+{% include /footer.html %}

@@ -1,0 +1,33 @@
+<div class="wrapper-footer">
+	<footer class="main-footer">
+		<div class="container">
+			<nav class="main-menu footer-menu">
+
+{% include /main-menu.html %}
+
+			</nav>
+			<nav class="soc">
+				<ul>
+					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="#"><i class="fa fa-rss"></i></a></li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+	<footer class="bottom-footer">
+		<div class="container text-center">
+			<div class="footer-copy">{{ site.time | date: '%Y' }}
+				<div class="fa fa-copyright"></div>
+				<span class="logo-footer logo-litera">{{ site.name }}</span></div>
+			<p> {{ site.copyright }} </p>
+		</div>
+	</footer>
+</div>
+
+<script src="../js/scripts.min.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,33 @@
+<section class="category-list-item">
+	<a class="cat-list-item" href="{{ post.url }}">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="pattern">
+					{% if page.category != 'questions' %}
+					<img alt="{{ post.title }}" class="img-responsive overlay" src="{{ post.thumb }}">
+					{% endif %}
+
+					{% if page.category == 'questions' %}
+					<div class="embed-container">
+						<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" height="315" src="{{ post.video }}"
+								width="560"></iframe>
+					</div>
+					{% endif %}
+
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<h3> {{ post.title }}</h3>
+				{% if page.category != 'product' %}
+				<div class="date"> {{ post.date | date: '%d'}}/{{ post.date | date: '%m'}}/{{ post.date | date: '%Y' }}
+				</div>
+				{% endif %}
+				<p>{{ post.content | strip_html | truncatewords: 20 }}</p>
+			</div>
+		</div>
+	</a>
+	{% if page.category == 'product' %}
+	<div class="row "><a class="{{ page.class-button }}" href="#"> {{ page.class-button-title }} </a></div>
+	{% endif %}
+
+</section>
