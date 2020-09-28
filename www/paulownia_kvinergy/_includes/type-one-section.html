@@ -1,9 +1,7 @@
 <section class="type-one">
 	<div class="container-cust">
 		<div class="row">
-			<div class="col-sm-12">
-				<h2 class="type-one-header"><a href="#">Вам это поможет</a></h2>
-			</div>
+
 
 {% for post in site.categories.product limit:1 offset: 0 %}
 {% include /type-one-section-1-item.html %}

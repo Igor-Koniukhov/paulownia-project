@@ -1,14 +1,15 @@
 <div class="swiper-slide swiper-slide_cover-black ">
-	<a href="{{ post.url }}" title="{{ post.title }}">
-		<h3>{{ post.title }}</h3>
+	<a href="{{ post.url }}" title="Подробнее о {{ post.title }} ">
+		<h3>{{ post.title | truncatewords: 2 }}</h3>
 
-		<div class="product n01"
+		<div class="product n{{ post.number }}"
 				style="background-image:url({{ post.thumb }})">
 
 		</div>
 		<div class="text-slider">
 			<p>
-				{{ post.description }}
+
+				{{ post.description | truncatewords: 15 }}
 			</p>
 			<ul>
 				<li>{{ post.text-a }}</li>

@@ -32,6 +32,20 @@ soc:
   <li><a href="#"><i class="fa fa-rss"></i></a></li>
 
 copyright: 'Копирование контента и размещение на других сайтах запрещено.'
+
+price-azotfiksator: '1000 грн'
+price-fitodoctor: '1100 грн'
+price-kvinergy-root: '40 грн'
+price-shan-tong-root: '50 грн'
+price-pao-tong-root: '55 грн'
+
+price-pawlownia-tree: '50 грн'
+price-shan-tong-tree: '1000 грн'
+price-pao-tong-tree: '1000 грн'
+price-gumat-k: '100 грн'
+price-light-tgreen: '1000 грн'
+
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

@@ -135,7 +135,9 @@ a {
 	height: 5px;
 	background-repeat: no-repeat;
 	border-radius: 50%;
-	top: 40%;
+	/*top: 40%;*/
+	bottom: 5px;
+	left: 12px;
 	margin-left: 10px;
 	opacity: .4;
 }
@@ -646,7 +648,7 @@ body {
 .green-section {
 	margin: 10px 0;
 	padding: 30px 0;
-	background-color: $green;
+	/*background-color: $green;*/
 	h2 {
 		a {
 			color: $dark-green;
@@ -798,7 +800,14 @@ body {
 			display: flex;
 			flex-direction: column;
 			position: relative;
-			padding: 40px 40px 25px;
+			padding: 20px;
+			a{
+				font-family: Oswald, sans-serif;
+				text-transform: uppercase;
+				letter-spacing: 1.5px;
+				font-weight: 200;
+				padding-bottom: 5px;
+			}
 		}
 	}
 }
@@ -1822,7 +1831,39 @@ h2.markup-part-paragraph {
 p {
 	font-family: Montserrat, sans-serif;
 }
+.type-one-first {
+	position: relative;
+	.type-one-section-1-item-description {
+		position: absolute;
+		top: 50px;
+		color: #fff;
+		padding-left: 15px;
+		font-size: 2rem;
+		background-color: rgba($dark-green, .6);
+		font-family: Oswald, sans-serif;
+		line-height:3rem;
+	}
+	h2 a{
+		color: $dark-green;
+		text-transform: uppercase;
+	}
+}
+.price{
+	display: flex;
+	justify-content: center;
+	padding-top: 10px;
+	font-size: 1.5rem;
+	font-weight: 700;
 
+
+}
+.buy{
+	a{
+		min-width: 100px;
+		width: 100%;
+		margin: 25px auto 25px auto;
+	}
+}
 
 
 /*-sliders-----------*/

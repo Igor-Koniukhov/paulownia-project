@@ -4,7 +4,7 @@ title: Корень павловнии
 description: Корни саженцев павловнии представленны тремя самыми популярными видами.
 categories: product
 catname: О продукте
-
+number: '02'
 class-button: ml-auto mr-2 btn btn-success
 class-button-title: Купить
 
@@ -20,16 +20,56 @@ text-c-description: 'Kvinergy - это Украинский сорт, котор
 
 image: "images/product/2020/2020-09-17-roots/1.jpg"
 thumb: "images/product/2020/2020-09-17-roots/1t.jpg"
+thumb-a: "images/product/2020/2020-09-17-roots/1t-a.jpg"
+thumb-b: "images/product/2020/2020-09-17-roots/1t-b.jpg"
+thumb-c: "images/product/2020/2020-09-17-roots/1t-c.jpg"
 permalink: "blog/:categories/:year-:month-:day-:slug.html"
 ---
 
 <blockquote>Представленные виды павловнии являются клонами и в рамках одного вида идентичны с конкретными характеристиками. Покупая нашу продукцию, вы получаете качественный товар и качественную консультацию он наших специалистов.</blockquote>
+<section class="buy">
+	<div class="row">
+		<div class="col-md-3"><img alt="" class='img-responsive' src="{{ page.thumb-a }}">
+			<div class="price">{{ site.price-shan-tong-root }}</div>
+			<a class=" btn btn-success d-block col-lg-12 col-sm-6"
+					href="#">Купить</a>
+		</div>
+		<div class="col-md-9"><h3 class="article__title title-description text-uppercase color-green">{{ page.title }}</h3>
+			<p>{{ page.text-a }}</p>
+			<p>{{ page.text-a-description }}</p></div>
+	</div>
 
-<p>{{ text-a }}</p>
-<p>{{ text-a-description }}</p>
+</section>
+<section class="buy">
+	<div class="row">
+		<div class="col-md-3"><img alt="" class='img-responsive' src="{{ page.thumb-b }}">
+			<div class="price">{{ site.price-pao-tong-root }}</div>
+			<a class=" btn btn-success d-block col-lg-12 col-sm-6"
+					href="#">Купить</a>
+		</div>
+		<div class="col-md-9"><h3 class="article__title title-description text-uppercase color-green">{{ page.title }}</h3>
+			<p>{{ page.text-b }}</p>
+			<p>{{ page.text-b-description }}</p></div>
+	</div>
 
-<p>{{ text-b }}</p>
-<p>{{ text-b-description }}</p>
+</section>
+<section class="buy">
+	<div class="row">
+		<div class="col-md-3"><img alt="" class='img-responsive' src="{{ page.thumb-c }}">
+			<div class="price">{{ site.price-kvinergy-root }}</div>
+			<a class=" btn btn-success d-block col-lg-12 col-sm-6"
+					href="#">Купить</a>
+		</div>
+		<div class="col-md-9"><h3 class="article__title title-description text-uppercase color-green">{{ page.title }}</h3>
+			<p>{{ page.text-c }}</p>
+			<p>{{ page.text-c-description }}</p></div>
+	</div>
 
-<p>{{ text-c }}</p>
-<p>{{ text-c-description }}</p>
+</section>
+
+
+
+
+
+
+
