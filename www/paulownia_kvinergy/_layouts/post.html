@@ -7,7 +7,9 @@
 
 
 <main>
-
+{% if page.trigger == 'form' %}
+{% include /form.html %}
+{% endif %}
 	<div class="article-content">
 		<div class="container-cust">
 			<nav class="breadcrumbs">

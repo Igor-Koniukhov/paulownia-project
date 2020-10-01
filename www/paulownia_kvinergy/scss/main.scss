@@ -188,7 +188,7 @@ body {
 	position: relative;
 	width: 100%;
 	background-color: $dark-green;
-	z-index: 100;
+	z-index: 110;
 	min-height: 65px;
 	&:before {
 		@include img-background($leave2, $opacity);
@@ -199,7 +199,7 @@ body {
 		width: 100%;
 		top: 0;
 		left: 0;
-		z-index: 100;
+		z-index: 110;
 		display: flex;
 		flex-shrink: 1;
 	}
@@ -399,7 +399,6 @@ body {
 }
 
 .fixed-on-hover {
-	top: 165px;
 	width: 100%;
 	z-index: 100;
 	height: auto;
@@ -742,6 +741,14 @@ body {
 		margin-bottom: $gutter/2;
 	}
 	&-first {
+		a {
+			&:hover {
+				text-decoration-color: $accent-orange;
+				h2 {
+					text-decoration: none;
+				}
+			}
+		}
 		.item-social {
 			margin-top: 8px;
 			a, .item-comments, .date {
@@ -801,7 +808,7 @@ body {
 			flex-direction: column;
 			position: relative;
 			padding: 20px;
-			a{
+			a {
 				font-family: Oswald, sans-serif;
 				text-transform: uppercase;
 				letter-spacing: 1.5px;
@@ -1271,9 +1278,7 @@ h1.main-title {
 
 .page-header {
 	&.overlay {
-
 		&:before {
-
 			opacity: 1;
 			background-color: transparent;
 			background-image: linear-gradient(rgba(#000, .2), rgba(#000, .7));
@@ -1284,7 +1289,6 @@ h1.main-title {
 		position: relative;
 	}
 }
-
 
 .page-header {
 	&-content {
@@ -1831,6 +1835,7 @@ h2.markup-part-paragraph {
 p {
 	font-family: Montserrat, sans-serif;
 }
+
 .type-one-first {
 	position: relative;
 	.type-one-section-1-item-description {
@@ -1841,31 +1846,205 @@ p {
 		font-size: 2rem;
 		background-color: rgba($dark-green, .6);
 		font-family: Oswald, sans-serif;
-		line-height:3rem;
+		line-height: 3rem;
 	}
-	h2 a{
+	h2 a {
 		color: $dark-green;
 		text-transform: uppercase;
 	}
 }
-.price{
-	display: flex;
-	justify-content: center;
-	padding-top: 10px;
-	font-size: 1.5rem;
-	font-weight: 700;
 
-
-}
-.buy{
-	a{
+.buy {
+	a {
 		min-width: 100px;
 		width: 100%;
 		margin: 25px auto 25px auto;
 	}
 }
 
+/*--start---styles-for-form-buying----*/
+.green-form {
+	background-color: lighten($green, 5%);
+	.container-fluid {
+		.write-to-us {
+			font-family: Oswald, sans-serif;
+			font-size: 2rem;
+			letter-spacing: 1px;
+			color: #fff;
+			font-weight: 400;
+		}
+		p {
+			font-family: Oswald, sans-serif;
+			color: #fff;
+			letter-spacing: 2px;
+		}
+	}
+}
 
+.form-wrapper {
+	position: relative;
+	margin: 0 auto;
+	padding: 0 50px 130px 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	&_dark-green {
+		padding: 50px;
+		background-color: $dark-green;
+		max-width: 50vw;
+		width: 100%;
+		.box {
+			width: 100%;
+			max-width: 50vw;
+		}
+	}
+}
+
+.box {
+	height: 100%;
+	padding-bottom: 20px;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+	width: calc(100% - 24px);
+	font-size: 16px;
+	padding: 6px 12px;
+}
+
+#moneyGr,
+#numbers,
+#pack,
+#priceP {
+	padding: unset;
+	text-align: center;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+.form-group textarea {
+	resize: none;
+}
+
+.control-file input[type="file"] {
+	font-size: 16px;
+	display: block;
+	margin-top: 7px;
+}
+
+.control-file {
+	margin-bottom: 20px;
+}
+
+.box button {
+	display: block;
+	width: 100%;
+	background-color: #fff;
+	color: #222;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	border: 1px solid #fff;
+	padding: 6px 0;
+	transition: .2s;
+}
+
+.box button:hover {
+	background-color: #fa8322;
+	color: #fff
+}
+
+.box button:focus {
+	outline: none;
+}
+
+.close {
+	text-transform: uppercase;
+	margin: 3px;
+	display: inline-flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	font-size: 40px;
+	line-height: 80%;
+	width: 40px;
+	height: 40px;
+	border: 3px solid $dark-green;
+	background-color: $accent-orange;
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: $dark-green;
+	font-weight: 700;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.popup-wrapper {
+	display: flex;
+	position: relative;
+	margin: 0 auto;
+	flex: 1 0 auto;
+	height: 100%;
+	width: 100%;
+	&.popup-form {
+		background-color: rgba($green, 1);
+	}
+}
+
+
+.btn-buy {
+	min-width: 100px;
+	position: relative;
+	z-index: 50;
+}
+
+
+
+.price,
+.moneyGr,
+.pack {
+	padding: 2px;
+	line-height: normal;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1rem;
+	font-weight: 700;
+}
+.price {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+#tentacles {
+	max-width: 100px;
+	font-size: 25px;
+	font-weight: 700;
+}
+
+table {
+	border: 1px solid $dark-green;
+	tbody {
+		border: 1px solid $dark-green;
+		tr, td, th {
+			border: 1px solid $dark-green;
+			padding: 3px;
+		}
+	}
+}
+
+/*--end---styles-for-form-buying----*/
 /*-sliders-----------*/
 @import "swiper";
 // import Swiper styles

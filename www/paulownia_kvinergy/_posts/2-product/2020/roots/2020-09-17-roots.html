@@ -1,68 +1,41 @@
 ---
 layout: post
-title: Корень павловнии
+title: Корень саженца павловнии Шан Тонг
 description: Корни саженцев павловнии представленны тремя самыми популярными видами.
 categories: product
 catname: О продукте
+trigger: form
+class-money-ua: moneyGr
+class-pack: pack
+pack-value: '/саж'
+class-price: 'price-shan-tong-root'
 number: '02'
 class-button: ml-auto mr-2 btn btn-success
 class-button-title: Купить
 
 text-a: Shan Tong
 text-a-description: 'Shan Tong- это одна из новых, но уже весьма популярных видов в Европе. Имеет следующие характеристики быстрый рост, устойчивость к насекомым вредителям, болезням, холоду засушливым периодам. Прямой и высокий ствол (порядка 9 метров с диаметром 30-35см) на выходе дает большой объем древесины хорошего качества. За 6-7 лет этот сорт может дать от 0,35 до 0.6м3 качественной древесины.'
-text-b: Pao Tong z07
-text-b-description: 'Pao Tong z07 - еще один популярный и очень мощный сорт. Уже на второй год роста достигает 7 метров. Особенно его ценят в Азии, в частности в Японии за быстрый рост и качество древесины. Среди прочих общих свойств всех сортов Павловния, таких высокие темпы роста, высокое качество древесины, устойчивость болезням и вредителям - этот сорт отличается особой устойчивостью к холоду. Отличная выживаемость при температурных парамертах -30°С. В наших широтах давно таких морозов не было, соответственно выживаемость с запасом. Как показывает практика посадки Pao Tong z07, наиболее рациональный шаг квадратно-гнездовой посадки 4х4м, за счет небольшой кроны позволяет выращивать на одном Га 640 деревьев. За 6 лет достигает от 6 до 10 метров. Диаметр ствола, по среднему показателю, достигает 39см.'
-
-
-text-c: Kvinergy
-text-c-description: 'Kvinergy - это Украинский сорт, который сочетает в себе лучшие качеств сортов мировых лидеров и прекрасную выживаемость и адаптивность к нашим широтам.'
-
 
 image: "images/product/2020/2020-09-17-roots/1.jpg"
 thumb: "images/product/2020/2020-09-17-roots/1t.jpg"
-thumb-a: "images/product/2020/2020-09-17-roots/1t-a.jpg"
-thumb-b: "images/product/2020/2020-09-17-roots/1t-b.jpg"
-thumb-c: "images/product/2020/2020-09-17-roots/1t-c.jpg"
 permalink: "blog/:categories/:year-:month-:day-:slug.html"
 ---
+
+
+
+
 
 <blockquote>Представленные виды павловнии являются клонами и в рамках одного вида идентичны с конкретными характеристиками. Покупая нашу продукцию, вы получаете качественный товар и качественную консультацию он наших специалистов.</blockquote>
 <section class="buy">
 	<div class="row">
-		<div class="col-md-3"><img alt="" class='img-responsive' src="{{ page.thumb-a }}">
-			<div class="price">{{ site.price-shan-tong-root }}</div>
+		<div class="col-md-3"><img alt="{{ page.text-a }}" class='img-responsive' src="{{ page.thumb }}">
+			<div class="price {{ page.class-price }}"></div>
 			<a class=" btn btn-success d-block col-lg-12 col-sm-6"
 					href="#">Купить</a>
 		</div>
 		<div class="col-md-9"><h3 class="article__title title-description text-uppercase color-green">{{ page.title }}</h3>
 			<p>{{ page.text-a }}</p>
 			<p>{{ page.text-a-description }}</p></div>
-	</div>
-
-</section>
-<section class="buy">
-	<div class="row">
-		<div class="col-md-3"><img alt="" class='img-responsive' src="{{ page.thumb-b }}">
-			<div class="price">{{ site.price-pao-tong-root }}</div>
-			<a class=" btn btn-success d-block col-lg-12 col-sm-6"
-					href="#">Купить</a>
-		</div>
-		<div class="col-md-9"><h3 class="article__title title-description text-uppercase color-green">{{ page.title }}</h3>
-			<p>{{ page.text-b }}</p>
-			<p>{{ page.text-b-description }}</p></div>
-	</div>
-
-</section>
-<section class="buy">
-	<div class="row">
-		<div class="col-md-3"><img alt="" class='img-responsive' src="{{ page.thumb-c }}">
-			<div class="price">{{ site.price-kvinergy-root }}</div>
-			<a class=" btn btn-success d-block col-lg-12 col-sm-6"
-					href="#">Купить</a>
-		</div>
-		<div class="col-md-9"><h3 class="article__title title-description text-uppercase color-green">{{ page.title }}</h3>
-			<p>{{ page.text-c }}</p>
-			<p>{{ page.text-c-description }}</p></div>
 	</div>
 
 </section>

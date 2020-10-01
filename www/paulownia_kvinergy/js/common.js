@@ -1,3 +1,26 @@
+//prices of our products:
+$('.moneyGr').text('грн');
+//money value depends of country
+
+$('.price-light-tgreen').text(10);
+$('.price-azotfiksator-biomag').text(174);
+$('.price-azotfiksator-biomag-dry').text(200);
+$('.price-fitodoctor').text(150);
+$('.price-fitodoctor-dry').text(200);
+$('.price-fitodoctor-dry-20').text(16);
+$('.price-kvinergy-root').text(120);
+$('.price-shan-tong-root').text(120);
+$('.price-pao-tong-root').text(120);
+$('.price-pawlownia-tree').text(60);
+$('.price-shan-tong-tree').text(60);
+$('.price-pao-tong-tree').text(60);
+$('.price-gumat-k-1l').text(80);
+$('.price-gumat-k-200ml').text(20);
+$('.price-gumat-k-dry').text(320);
+
+
+//--------end--of-prices
+
 $(function () {
 	//variable which used in the photoChange function
 	let imgUrl = {
@@ -55,14 +78,11 @@ $(function () {
 	$('.search-wrap').click(function (e) {
 		e.stopPropagation();
 	});
-	$('.top-line').before('<div class="mobile-menu d-lg-none"></div>');
+	$('.top-line').after('<div class="mobile-menu d-lg-none"></div>');
 	$('.top-menu').clone().appendTo('.mobile-menu');
 	$('.mobile-menu-button').click(function () {
 		$('.mobile-menu').stop().slideToggle();
 	});
-
-	/*$('.cat-header-block').after('<div class="telephon-number-position d-sm-none"></div>');
-	$('.tel').clone().appendTo('.telephon-number-position');*/
 
 
 	$('.col-item').hover(function () {
@@ -83,56 +103,6 @@ $(function () {
 
 	});
 
-
-	function sliderChange(x) {
-
-		if (x.matches) {
-
-			let swiper1 = new Swiper('.container-swiper-coverflow', {
-				pagination: {
-					el: '.swiper-pagination',
-					type: 'progressbar',
-				},
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-			});
-
-
-		} else {
-			let swiper2 = new Swiper('.container-swiper-coverflow', {
-				effect: 'coverflow',
-				grabCursor: true,
-				centeredSlides: true,
-				initialSlide: 2,
-				slidesPerView: 3,
-				coverflowEffect: {
-					rotate: 50,
-					stretch: 0,
-					depth: 400,
-					modifier: 1,
-					slideShadows: true,
-				},
-				pagination: {
-					el: '.swiper-pagination',
-					clickable: true,
-				},
-				keyboard: {
-					enabled: true,
-				},
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-			});
-		}
-
-	}
-
-	let widthW = window.matchMedia('(max-width: 768px)')
-	sliderChange(widthW)
-	widthW.addEventListener(sliderChange, sliderChange)
 
 	$("body").prognroll({
 		height: 3,
@@ -166,30 +136,43 @@ var swiper = new Swiper('.swiper-container_black-cover', {
 	},
 });
 
-
 let topBlock = document.querySelector('.top-line');
 let offsetTopBlock = topBlock.offsetTop;
-/*let block = document.querySelector('.top-line');*/
+
+
+$('.mobile-menu-button').on('click', function () {
+
+
+	if ($(window).scrollTop() <= offsetTopBlock) {
+		$('.mobile-menu').addClass('fixed-on-hover');
+
+		let offsetBottom = $(window).scrollTop();
+		let topLineHeight = 65;
+		let positionMobMenu = (offsetTopBlock - offsetBottom) + topLineHeight;
+		$('.fixed-on-hover').css({'top': positionMobMenu + 'px'});
+
+	} else {
+		$('.fixed-on-hover').css({'top': 'unset'});
+		$('.mobile-menu').removeClass('fixed-on-hover');
+	}
+
+})
 
 
 $(window).on('scroll', function () {
+	$('.fixed-on-hover').css({'top': '65px'});
 	$('.mobile-menu').removeClass('fixed-on-hover').slideUp();
 	if ($(this).scrollTop() >= offsetTopBlock) {
-		$('.top-line').next().css({'margin-top': '65px', 'transition': '.3s all ease;'});
+		$('.top-line').next().next().css({'margin-top': '65px', 'transition': '.3s all ease;'});
 		$(topBlock).addClass('fixed')
 		$(".mobile-menu").addClass('fixed');
-
-
 	} else {
 		$(topBlock).removeClass('fixed');
 		$(".mobile-menu").removeClass('fixed');
-		$('.top-line').next().css({'margin-top': '0', 'transition': '.3s all ease;'});
-	};
+		$('.top-line').next().next().css({'margin-top': '0', 'transition': '.3s all ease;'});
+	}
+	;
 
-});
-
-$("header").hover(function () {
-	$('.mobile-menu').addClass('fixed-on-hover');
 });
 
 //snippet for view active menu
@@ -201,3 +184,64 @@ $('.main-menu li a').each(function () {
 		$(this).parent('li').addClass('active');
 	}
 });
+
+
+$(function () {
+	document.getElementById('ajax-contact-form').addEventListener('submit', function (evt) {
+		var http = new XMLHttpRequest(), f = this;
+		var th = $(this);
+		evt.preventDefault();
+		http.open("POST", "contact.php", true);
+		http.onreadystatechange = function () {
+			if (http.readyState == 4 && http.status == 200) {
+				alert(http.responseText);
+				if (http.responseText.indexOf(f.nameFF.value) == 0) { // очистить поля формы, если в ответе первым словом будет имя отправителя (nameFF)
+					th.trigger("reset");
+				}
+			}
+		}
+		http.onerror = function () {
+			alert('Ошибка, попробуйте еще раз');
+		}
+		http.send(new FormData(f));
+	}, false);
+});
+
+//that script add price and value in form
+$('.btn-buy').on('click', function () {
+	$('.popup-wrapper').removeClass('d-none').addClass('popup-form');
+	$('.form-wrapper').removeClass('d-none');
+
+	let ths = $(this);
+	let price = ths.parent().find('.price').html() * 1;
+	let pack = ths.parent().find('.pack').html();
+	let moneyGr = $('.moneyGr').html();
+	let productName = ths.parent().parent().find('h3').html();
+
+	$('#moneyGr').val(moneyGr);
+	$('#pack').val(pack);
+	$('#nameProduct').val(productName);
+	$('#priceP').val(price);
+
+	$('.main-page-wrapper').css({'display': 'none'});
+	$('.article-content').css({'display': 'none'});
+
+	let inputNum = document.querySelector('#numbers');
+	inputNum.onchange = function(){
+		let numbersOfproduct = inputNum.value * 1;
+		let sumOf = numbersOfproduct * price;
+		let sumOfOrder = $('#sumOfOrder').val(sumOf);
+	}
+
+});
+
+$('.btn-buy').click(function (e) {
+	e.stopPropagation();
+});
+$('.close').on('click', function () {
+	let popupWrapper = document.body.getElementsByClassName('popup-wrapper')[0];
+	$(popupWrapper).removeClass('popup-form').addClass('d-none');
+	$('.main-page-wrapper').css({'display': 'block'});
+	$('.article-content').css({'display': 'block'});
+})
+

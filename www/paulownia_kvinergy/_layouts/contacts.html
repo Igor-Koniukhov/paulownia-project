@@ -9,9 +9,10 @@
 					<div class="wrapper-address pattern">
 						<address>
 							kvinerji.com.ua, ООО Чарли<br>
-							                                  ул. Валентиновская, 64-б<br>
-							                                  г. Харьков<br>
-							<abbr title="Phone">Тел:</abbr> <a class="tel" href="tel:{{ site.telephone }}">{{ site.telephone }}
+							ул. Валентиновская, 64-б<br>
+							г. Харьков<br>
+							<abbr title="Phone">Тел:</abbr>
+							<a class="tel" href="tel:{{ site.telephone }}">{{ site.telephone }}
 							</a>
 						</address>
 
@@ -21,61 +22,54 @@
 							<a class="mail" href="mailto:{{ site.email }}">{{ site.email }} </a>
 						</address>
 					</div>
-
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
 <main>
-<section class="contact-section">
-
-
-	<div class="container-cust ">
-		<div class="row ">
+	<section class="green-form">
+		<div class="container-fluid">
 			<div class="col-12 text-center pt-md-4 pt-sm-2">
-				<div class="write-to-us ">Напишите нам {{ site.categories.product.title }}</div>
-				<p class="title-description">{{ page.description }}</p>
+				<div class="write-to-us ">Напишите нам</div>
+				<p>{{ page.description }}</p>
 			</div>
-			<div class="col-9 mx-auto">
-				<div class="wrapper-form">
+			<div class="form-wrapper">
+				<div class="box">
+					<form enctype="multipart/form-data" id="ajax-contact-form" method="post">
 
-					<form>
 						<div class="form-group">
-							<label for="exampleFormControlInput1">Email address</label>
-							<input class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
-									type="email">
+							<label for="nameFF">Имя:</label>
+							<input id="nameFF" name="nameFF" required type="text">
 						</div>
 						<div class="form-group">
-							<label for="exampleFormControlSelect1">Example select</label>
-							<select class="form-control" id="exampleFormControlSelect1">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
+							<label for="surnameFF">Фамилия:</label>
+							<input id="surnameFF" name="surnameFF" required type="text">
+						</div>
+
+						<div class="form-group">
+							<label for="contactFF">E-mail:</label>
+							<input id="contactFF" name="contactFF" required type="email">
+						</div>
+
+						<div class="form-group">
+							<label for="telFF">Телефон:</label>
+							<input id="telFF" name="telFF" required type="tel">
 						</div>
 						<div class="form-group">
-							<label for="exampleFormControlSelect2">Example multiple select</label>
-							<select class="form-control" id="exampleFormControlSelect2" multiple>
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
+							<label for="projectFF">Сообщение</label>
+							<textarea cols="40" id="projectFF" name="projectFF" rows="3"></textarea>
 						</div>
-						<div class="form-group">
-							<label for="exampleFormControlTextarea1">Example textarea</label>
-							<textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+						<div class="control-file">
+							<label for="fileFF">Прикрепить файл:</label>
+							<input id="fileFF" name="fileFF" type="file">
 						</div>
+						<button class="btn" id="submitFF" type="submit">Отправить сообщение</button>
 					</form>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
-
+	</section>
 </main>
 {% include /footer.html %}

@@ -3,7 +3,13 @@ layout: post
 title: Композитная опора для растений LIGHTgreen
 description: 'Композитные опоры для растений LIGHTgreen применяют для подвязки вьющихся растений, при выращивании овощей (помидоры, огурцы и др.) в теплицах и на открытых грунтах, для поддержки саженцев и плодовых деревьев, для цветов.'
 categories: product
+trigger: form
 catname: O продукции
+trigger: form
+class-money-ua: moneyGr
+class-pack: pack
+pack-value: '/шт'
+class-price: 'price-light-tgreen'
 text-a:
 text-b:
 text-c:
@@ -14,15 +20,22 @@ video: "URL video"
 permalink: "blog/:categories/:year-:month-:day-:slug.html"
 ---
 
+
+
 <blockquote> {{ page.description }} </blockquote>
 <section class="buy">
 	<div class="row">
 		<div class="col-md-3"><img alt="" class='img-responsive' src="{{ page.thumb }}">
-			<div class="price">{{ site.price-light-tgreen }}</div>
-			<a class=" btn btn-success d-block col-lg-12 col-sm-6"
-					href="#">Купить</a>
+
+			<div class="row align-content-center">
+				<div class="price {{ page.class-price }}"></div>
+				<div class=" {{ page.class-money-ua }} "></div>
+				<div class=" {{ page.class-pack }} "> {{ page.pack-value }}</div>
+			</div>
+			<button class=" btn btn-success d-block col-lg-12 col-sm-6 btn-buy">Купить</button>
+
 		</div>
-		<div class="col-md-9"><h3 class="article__title title-description text-uppercase color-green">LIGHTgreen</h3>
+		<div class="col-md-9"><h3 class="article__title title-description text-uppercase color-green"> {{ page.title }} </h3>
 			<p><i class="markup-part-paragraph"> Композитная опора</i>   для растений LIGHTgreen – это специально разработанные колья из композита с тонким ребром, которое не портит стебель и корень. Предназначена для многоразового использования, легко моется и не занимает много места. Специальная добавка защищает опоры от разрушающего воздействия УФ-излучения. Устойчива к воздействию влаги, кислот и щелочей. Она окрашена в зелёный цвет для эстетики. Благодаря своей прочности и устойчивости к воздействию внешних факторов срок службы опор составляет 80 лет!</p></div>
 	</div>
 

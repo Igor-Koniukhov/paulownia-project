@@ -1,5 +1,5 @@
 <section class="category-list-item">
-	<a class="cat-list-item" href="{{ post.url }}">
+	<div class="cat-list-item">
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="pattern">
@@ -9,25 +9,36 @@
 
 					{% if page.category == 'questions' %}
 					<div class="embed-container">
-						<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" height="315" src="{{ post.video }}"
-								width="560"></iframe>
+						<iframe src="{{ post.video }}"></iframe>
 					</div>
 					{% endif %}
 
 				</div>
 			</div>
+
 			<div class="col-sm-6">
-				<h3> {{ post.title }}</h3>
-				{% if page.category != 'product' %}
-				<div class="date"> {{ post.date | date: '%d'}}/{{ post.date | date: '%m'}}/{{ post.date | date: '%Y' }}
-				</div>
-				{% endif %}
-				<p>{{ post.content | strip_html | truncatewords: 20 }}</p>
+				<a class="cat-list-item" href="{{ post.url }}">
+					<h3> {{ post.title }}</h3>
+					{% if page.category != 'product' %}
+					<div class="date"> {{ post.date | date: '%d'}}/{{ post.date | date: '%m'}}/{{ post.date | date: '%Y' }}
+					</div>
+					{% endif %}
+					<p>{{ post.content | strip_html | truncatewords: 15 }}</p>
+				</a>
 			</div>
+
 		</div>
-	</a>
+	</div>
 	{% if page.category == 'product' %}
-	<div class="row "><a class="{{ page.class-button }}" href="#"> {{ page.class-button-title }} </a></div>
+	<div class="row mb-3">
+			<div class="price {{ post.class-price }}"></div>
+			<div class=" {{ post.class-money-ua }} "></div>
+			<div class=" {{ post.class-pack }} "> {{ post.pack-value }}</div>
+		<button class="{{ page.class-button }}"> {{ page.class-button-title }}</button>
+
+
+	</div>
 	{% endif %}
 
 </section>
+

@@ -1,21 +1,18 @@
 <div class="col-md-6 item-title-white">
 	<div class="pattern">
 		<div class="overlay item-title">
-
 			<div class="embed-container">
-				<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" height="315" src="{{ post.video }}"
-						width="560"></iframe>
+				<iframe src="{{ post.video }}"></iframe>
 			</div>
-
 			<div class="item-title-content">
 				<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
 				<div class="item-social">
 					<div class="row">
-					<div class="item-comments" title="Some text">
-						<i class="fa fa-comment"><a class="item-comments-count"
-								href="{{ post.url }}#disques_thread"></a></i>
-						<span class="date">{{ post.date | date: '%d' }}/{{ post.date | date: '%m' }}/{{ post.date | date: '%Y' }}</span>
-					</div>
+						<div class="item-comments" title="Some text">
+							<i class="fa fa-comment"><a class="item-comments-count"
+									href="{{ post.url }}#disques_thread"></a></i>
+							<span class="date">{{ post.date | date: '%d' }}/{{ post.date | date: '%m' }}/{{ post.date | date: '%Y' }}</span>
+						</div>
 					</div>
 				</div>
 			</div>

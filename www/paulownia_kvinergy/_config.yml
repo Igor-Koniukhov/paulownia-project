@@ -4,16 +4,16 @@ email: ban1986x@gmail.com
 name: kvinergy
 description: ПАВЛОВНИЯ КВИНЕРДЖИ Современное решение в агробизнесе Компания “АРТАНД АГРО” Является официальным дистрибьютором Павловнии Квинерджи Наши
 themecolor: '#202225'
-imagehome: img/imagehome.jpg
+imagehome: img/products/slider-2/forest-1.jpg
 imagetitle: img/favicon/icon-leaves.png
-url: 'http://kvinerdjie.com.ua'
+url: 'http://pavlovnya.1gb.ua'
 baseurl: '/'
 
 plugins: [jekyll-paginate-v2]
 category_dir: blog
 pagination:
   enabled: true
-  per_page: 4
+  per_page: 5
   title: ':title - Страница :num'
   limit: 0
   sort_field: 'date'
@@ -33,17 +33,7 @@ soc:
 
 copyright: 'Копирование контента и размещение на других сайтах запрещено.'
 
-price-azotfiksator: '1000 грн'
-price-fitodoctor: '1100 грн'
-price-kvinergy-root: '40 грн'
-price-shan-tong-root: '50 грн'
-price-pao-tong-root: '55 грн'
 
-price-pawlownia-tree: '50 грн'
-price-shan-tong-tree: '1000 грн'
-price-pao-tong-tree: '1000 грн'
-price-gumat-k: '100 грн'
-price-light-tgreen: '1000 грн'
 
 
 # Exclude from processing.

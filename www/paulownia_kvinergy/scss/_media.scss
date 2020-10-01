@@ -47,6 +47,14 @@
 	.wrapper-content {
 		padding: $gutter 0 0 0;
 	}
+	.form-wrapper {
+		&_dark-green {
+			max-width: 70vw;
+			.box {
+				max-width: 70vw;
+			}
+		}
+	}
 }
 
 // ≥768px
@@ -115,6 +123,14 @@
 		flex-direction: column;
 		max-width: unset;
 		width: unset;
+	}
+	.form-wrapper {
+		&_dark-green {
+			max-width: 80vw;
+			.box {
+				max-width: 80vw;
+			}
+		}
 	}
 }
 
@@ -214,6 +230,24 @@
 		}
 		img {
 			margin: auto auto 12px;
+		}
+	}
+	.form-wrapper {
+		&_dark-green {
+			max-width: 100vw;
+			padding: 15px;
+			.box {
+				max-width: 100vw;
+				padding: unset;
+			}
+			.form-group {
+				margin: 0 auto;
+			}
+			.close{
+				width: 1.8rem;
+				height: 1.8rem;
+				font-size: 1.8rem;
+			}
 		}
 	}
 }
