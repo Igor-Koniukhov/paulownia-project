@@ -104,13 +104,13 @@ $(function () {
 	});
 
 
-	$("body").prognroll({
-		height: 3,
-		color: "#ec1c1c",
-		custom: false
-	});
+});
 
 
+$("body").prognroll({
+	height: 3,
+	color: "#ec1c1c",
+	custom: false
 });
 
 
@@ -138,14 +138,9 @@ var swiper = new Swiper('.swiper-container_black-cover', {
 
 let topBlock = document.querySelector('.top-line');
 let offsetTopBlock = topBlock.offsetTop;
-
-
 $('.mobile-menu-button').on('click', function () {
-
-
 	if ($(window).scrollTop() <= offsetTopBlock) {
 		$('.mobile-menu').addClass('fixed-on-hover');
-
 		let offsetBottom = $(window).scrollTop();
 		let topLineHeight = 65;
 		let positionMobMenu = (offsetTopBlock - offsetBottom) + topLineHeight;
@@ -186,51 +181,39 @@ $('.main-menu li a').each(function () {
 });
 
 
-$(function () {
-	document.getElementById('ajax-contact-form').addEventListener('submit', function (evt) {
-		var http = new XMLHttpRequest(), f = this;
-		var th = $(this);
-		evt.preventDefault();
-		http.open("POST", "contact.php", true);
-		http.onreadystatechange = function () {
-			if (http.readyState == 4 && http.status == 200) {
-				alert(http.responseText);
-				if (http.responseText.indexOf(f.nameFF.value) == 0) { // очистить поля формы, если в ответе первым словом будет имя отправителя (nameFF)
-					th.trigger("reset");
-				}
-			}
-		}
-		http.onerror = function () {
-			alert('Ошибка, попробуйте еще раз');
-		}
-		http.send(new FormData(f));
-	}, false);
-});
-
 //that script add price and value in form
 $('.btn-buy').on('click', function () {
+	//main content  hidden
+	$('.main-page-wrapper').css({'display': 'none'});
+	$('.article-content').css({'display': 'none'});
+	// form is appeared as content instead main content
 	$('.popup-wrapper').removeClass('d-none').addClass('popup-form');
 	$('.form-wrapper').removeClass('d-none');
-
+	// sources were specified - from which places will be taken value for cells
 	let ths = $(this);
 	let price = ths.parent().find('.price').html() * 1;
 	let pack = ths.parent().find('.pack').html();
 	let moneyGr = $('.moneyGr').html();
 	let productName = ths.parent().parent().find('h3').html();
 
+	//destinations were specified as cells in send form for the buy card and assigned value
 	$('#moneyGr').val(moneyGr);
 	$('#pack').val(pack);
 	$('#nameProduct').val(productName);
 	$('#priceP').val(price);
 
-	$('.main-page-wrapper').css({'display': 'none'});
-	$('.article-content').css({'display': 'none'});
+	if ($('#multiplyOfOrder').value == null) {
 
+		$('#multiplyOfOrder').val(price);
+	}
+	//concrete places were specified with 'this' to value taken
+	$('#numbers').val(1)
 	let inputNum = document.querySelector('#numbers');
-	inputNum.onchange = function(){
+	inputNum.onchange = function () {
+		let multiplyOfOrder = $('#multiplyOfOrder');
 		let numbersOfproduct = inputNum.value * 1;
-		let sumOf = numbersOfproduct * price;
-		let sumOfOrder = $('#sumOfOrder').val(sumOf);
+		let multiplyOf = numbersOfproduct * price;
+		multiplyOfOrder.val(multiplyOf);
 	}
 
 });
@@ -244,4 +227,57 @@ $('.close').on('click', function () {
 	$('.main-page-wrapper').css({'display': 'block'});
 	$('.article-content').css({'display': 'block'});
 })
+
+
+/*$('#submitFF').on('click', function () {
+	console.log(' Im to work')
+
+	$(function () {
+		document.getElementById('ajax-contact-form').addEventListener('submit', function (evt) {
+			var http = new XMLHttpRequest(), f = this;
+			var th = $(this);
+			evt.preventDefault();
+			http.open("POST", "contact.php", true);
+			http.onreadystatechange = function () {
+				if (http.readyState == 4 && http.status == 200) {
+					alert(http.responseText);
+					if (http.responseText.indexOf(f.nameFF.value) == 0) { // очистить поля формы, если в ответе первым словом будет имя отправителя (nameFF)
+						th.trigger("reset");
+					}
+				}
+			}
+			http.onerror = function () {
+				alert('Ошибка, попробуйте еще раз');
+			}
+			http.send(new FormData(f));
+		}, false);
+	});
+
+});*/
+
+
+
+$(function () {
+
+	document.getElementById('ajax-contact-form-2').addEventListener('submit', function (evt) {
+		var http = new XMLHttpRequest(), f = this;
+		var th = $(this);
+		evt.preventDefault();
+		http.open("POST", "contactbuy.php", true);
+		http.onreadystatechange = function () {
+			if (http.readyState == 4 && http.status == 200) {
+				alert(http.responseText);
+				if (http.responseText.indexOf(f.nameFF.value) == 0) { // очистить поля формы, если в ответе первым словом будет имя отправителя (nameFF)
+					th.trigger("reset");
+				}
+			}
+		}
+		http.onerror = function () {
+			alert('Ошибка, попробуйте еще раз');
+		}
+		http.send(new FormData(f));
+	}, false);
+
+});
+
 
