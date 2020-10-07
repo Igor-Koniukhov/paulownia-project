@@ -13,7 +13,7 @@ plugins: [jekyll-paginate-v2]
 category_dir: blog
 pagination:
   enabled: true
-  per_page: 5
+  per_page: 7
   title: ':title - Страница :num'
   limit: 0
   sort_field: 'date'

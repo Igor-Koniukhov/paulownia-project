@@ -12,10 +12,8 @@
 						<iframe src="{{ post.video }}"></iframe>
 					</div>
 					{% endif %}
-
 				</div>
 			</div>
-
 			<div class="col-sm-6">
 				<a class="cat-list-item" href="{{ post.url }}">
 					<h3> {{ post.title }}</h3>
@@ -26,7 +24,6 @@
 					<p>{{ post.content | strip_html | truncatewords: 15 }}</p>
 				</a>
 			</div>
-
 		</div>
 	</div>
 	{% if page.category == 'product' %}
@@ -35,10 +32,7 @@
 			<div class=" {{ post.class-money-ua }} "></div>
 			<div class=" {{ post.class-pack }} "> {{ post.pack-value }}</div>
 		<button class="{{ page.class-button }}"> {{ page.class-button-title }}</button>
-
-
 	</div>
 	{% endif %}
-
 </section>
 

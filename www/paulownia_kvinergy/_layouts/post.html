@@ -1,11 +1,6 @@
-{% include /head.html %}
-
+{% include /head-post.html %}
 {% include /header-second-position.html %}
-
-
 {% include /header-post.html %}
-
-
 <main>
 {% if page.trigger == 'form' %}
 {% include /form.html %}
@@ -25,29 +20,20 @@
 					<div class="wrapper-content">
 						<article class="main-article">
 							<div class="article-body">
-
 								<!--<div class="ad article-top-ad">
-
 								</div>-->
-
 								{{ content }}
-
 							</div>
 							<div class="likely-on-page">
 								<div class="likely" data-media="{{ page.image }}" data-title="{{ page.title }}"
 										data-url="{{ site.url }}{{ page.url }}">
-
 									<div class="facebook" title="Поделиться в Facebook">Facebook</div>
 									<div class="twitter" title="Поделиться в Twitter">Twitter</div>
-
 									<div class="gplus" title="Плюсануть">Плюсануть</div>
 								</div>
 							</div>
-
 							<!--<div class="ad article-top-ad">
-
 							</div>-->
-
 							<div class="read-more">
 								<div class="read-more-header">Из последнего в категории {{ page.catname }}:</div>
 								<ul>
@@ -60,11 +46,8 @@
 									{% endfor %}
 								</ul>
 							</div>
-
 							<div class="comments">
-
-								<!--  comments-->
-
+								{% include /comments.html %}
 							</div>
 						</article>
 					</div>
@@ -76,5 +59,4 @@
 		</div>
 	</div>
 </main>
-
 {% include /footer.html %}

@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<base href="{{site.baseurl}}">
-	<title>{{site.title}}</title>
-	<meta content="{{site.description}}"
+	<title>{{ page.title}} | {{ site.title }}</title>
+	<meta content="{{ page.description }}"
 			name="description">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
 	<!-- Template Basic Images Start -->
-	<meta content="{{site.imagehome}}" property="og:image">
+	<meta content="{{ page.image }}" property="og:image">
 	<link href="{{site.imagetitle}}" rel="icon">
 	<!-- Template Basic Images End -->
 	<!-- Custom Browsers Color Start -->
@@ -17,4 +17,4 @@
 	<!-- Custom Browsers Color End -->
 	<link href="../css/main.min.css" rel="stylesheet">
 </head>
-<body class="ishome">
+<body class="is-blog">

@@ -2,19 +2,12 @@
 	<div class="page-header-content">
 		<div class="container">
 			<div class="row">
-
 				<div class="col-lg-7 col-md-8">
-
-
 					<a class="page-category-link" href="{{ site.category_dir }}/{{ page.categories }}">{{ page.catname }}</a>
-
-
 {% if page.catname == 'Статьи' or page.catname == 'ЧЗВ' %}
 					<span class="date">{{ page.date | date: '%d' }}/{{ page.date | date: '%m' }}/{{ page.date | date: '%Y' }}</span>
 {% endif %}
-
 					<h1>{{ page.title }}</h1>
-
 {% if page.catname == 'Статьи' or page.catname == 'ЧЗВ' %}
 <div class="item-social">
 	<div class="item-comments" title="Количество комментариев">
@@ -29,7 +22,6 @@
 	</div>
 </div>
 {% endif %}
-
 				</div>
 			</div>
 		</div>

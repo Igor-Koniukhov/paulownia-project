@@ -518,7 +518,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 10px;
-	max-width: 260px;
+	max-width: 300px;
 	width: 100%;
 	.fa {
 		font-size: .8rem;
@@ -526,18 +526,14 @@ body {
 	}
 	.item-comments {
 		display: flex;
-		margin-right: 20px;
 		&-count {
 			font-size: .8rem;
 			display: flex;
 			position: relative;
 			text-decoration: none;
+			color: #fff;
 			&:hover {
 				color: $accent;
-			}
-			&::after {
-				@extend %point-comment;
-				margin-left: 1.5rem;
 			}
 		}
 	}
@@ -1068,8 +1064,8 @@ h1.main-title {
 	color: $text-color;
 	display: block;
 	text-decoration: none;
-	margin-bottom: $gutter/1.5;
-	margin-top: $gutter/1.5;
+	/*margin-bottom: $gutter/1.5;*/
+	/*margin-top: $gutter/1.5;*/
 	padding-bottom: 4px;
 	h2, h3 {
 		transition: color .25s ease;
@@ -1188,11 +1184,6 @@ h1.main-title {
 			color: #aaaaaa;
 			font-size: 12px;
 			position: relative;
-			&::after {
-				@extend %point-comment;
-				background-color: #aaaaaa;
-				opacity: 1;
-			}
 		}
 	}
 }
@@ -2002,14 +1993,11 @@ p {
 	}
 }
 
-
 .btn-buy {
 	min-width: 100px;
 	position: relative;
 	z-index: 50;
 }
-
-
 
 .price,
 .moneyGr,
@@ -2022,6 +2010,7 @@ p {
 	font-size: 1rem;
 	font-weight: 700;
 }
+
 .price {
 	font-size: 1.5rem;
 	font-weight: 700;
@@ -2042,6 +2031,68 @@ table {
 			padding: 3px;
 		}
 	}
+}
+
+.latest-comments {
+	border: 1px solid #eee;
+	background-color:#f5f5f5f5;
+}
+
+.dsq-widget-comment p {
+	display: inline-block;
+	font-size: 13px;
+	line-height: 20px;
+	text-align: left;
+}
+
+p.dsq-widget-meta {
+	position: relative;
+
+	clear: both;
+	font-size: 14px;
+	line-height: 20px;
+	padding: 0;
+	margin: 5px 0 0 0;
+	text-align: left;
+	a{
+		color: $accent-orange;
+		font-size: 12px;
+		line-height: 12px;
+	}
+}
+
+li.dsq-widget-item {
+	text-align: left;
+	margin: $gutter/2 0;
+	padding: $gutter/2 0 $gutter/2 40px;
+	border-bottom: 1px solid #eee;
+	position: relative;
+	.dsq-widget-avatar {
+		position: absolute;
+		margin-left: 5px;
+		left: 0;
+		border-radius: 50%;
+	}
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+a.dsq-widget-user {
+	color: #000;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.dsq-widget-user {
+	&:after {
+		content: ':';
+	}
+}
+
+.dsq-widget-list {
+	margin: $gutter/2 0;
+	padding: 0;
 }
 
 /*--end---styles-for-form-buying----*/
