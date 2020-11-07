@@ -279,6 +279,26 @@ body {
 	}
 }
 
+.logo-partner {
+	margin-left: 15px;
+	display: flex;
+	flex-direction: column;
+	&__introduction {
+		display: flex;
+		margin-left: 10px;
+	}
+	img.enzim {
+		width: 120px;
+		background-color: rgba(#fff, .8);
+		border-radius: 5px;
+		padding: 2px;
+	}
+}
+
+img.img-responsive.enzim {
+	width: 120px;
+}
+
 .main-menu {
 	padding: 0 100px;
 	width: 100%;
@@ -437,7 +457,7 @@ body {
 		a {
 			font-size: 1rem;
 			color: #ffffff;
-			padding-left: 15px;
+			/*padding-left: 15px;*/
 			display: block;
 			&:hover {
 				text-decoration: underline;
@@ -522,15 +542,20 @@ body {
 	width: 100%;
 	.fa {
 		font-size: .8rem;
-		margin: auto .7rem auto;
+		margin-right: 10px;
+		/*margin: auto .7rem auto;*/
 	}
 	.item-comments {
 		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		align-items: center;
 		&-count {
 			font-size: .8rem;
 			display: flex;
 			position: relative;
 			text-decoration: none;
+			margin: 0 auto;
 			color: #fff;
 			&:hover {
 				color: $accent;
@@ -982,7 +1007,6 @@ nav.soc {
 		display: flex;
 		align-items: center;
 		height: 100px;
-		padding: 12px;
 		color: #ffffff;
 		background-color: rgba($green, .1);
 		.logo.logo-litera {
@@ -1012,8 +1036,8 @@ nav.soc {
 			border: 1px solid #fff;
 			top: 10px;
 			bottom: 10px;
-			left: 10px;
-			right: 10px;
+			left: 0;
+			right: 0;
 		}
 		p {
 			font-family: $header-font;
@@ -1385,7 +1409,6 @@ h1.main-title {
 	}
 	&-body {
 		p {
-			margin: 25px 0;
 			line-height: 1.6;
 			/*font-family: 'Montserrat', sans-serif;*/
 		}
@@ -1790,7 +1813,6 @@ h2.markup-part-paragraph {
 		padding-bottom: 50px;
 		p {
 			font-size: 1rem;
-			line-height: 2rem;
 			font-family: 'Montserrat', sans-serif;
 		}
 		blockquote {
@@ -1831,7 +1853,7 @@ p {
 	position: relative;
 	.type-one-section-1-item-description {
 		position: absolute;
-		top: 50px;
+		top: 38px;
 		color: #fff;
 		padding-left: 15px;
 		font-size: 2rem;
@@ -2035,7 +2057,7 @@ table {
 
 .latest-comments {
 	border: 1px solid #eee;
-	background-color:#f5f5f5f5;
+	background-color: #f5f5f5f5;
 }
 
 .dsq-widget-comment p {
@@ -2047,14 +2069,13 @@ table {
 
 p.dsq-widget-meta {
 	position: relative;
-
 	clear: both;
 	font-size: 14px;
 	line-height: 20px;
 	padding: 0;
 	margin: 5px 0 0 0;
 	text-align: left;
-	a{
+	a {
 		color: $accent-orange;
 		font-size: 12px;
 		line-height: 12px;
@@ -2093,6 +2114,132 @@ a.dsq-widget-user {
 .dsq-widget-list {
 	margin: $gutter/2 0;
 	padding: 0;
+}
+
+.derz-reestr-vitiag {
+	margin-bottom: 30px;
+	border: 1px solid rgba(#333, .2);
+	padding-top: 3px;
+	background-color: #fff;
+	&:before {
+		content: '';
+		display: block;
+		border-bottom: 1px solid rgba(#333, .2);
+	}
+	p {
+		margin-left: 15px
+	}
+	.wrapper-img {
+		padding: 0 15px 15px 15px;
+	}
+}
+
+.buy {
+	.align-content-center {
+		display: flex;
+		justify-content: center;
+	}
+	.btn-buy {
+		margin: 0 auto;
+	}
+}
+
+.text-mm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 500;
+	margin-left: 5px;
+}
+
+.roll-up {
+	border-radius: 50%;
+	display: none;
+	position: fixed;
+	right: 17px;
+	top: 85vh;
+	z-index: 50;
+	width: 40px;
+	height: 40px;
+	.img-responsiv {
+		width: 100%;
+	}
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.ad {
+	text-align: center;
+	width: 100%;
+	display: none;
+	overflow: hidden;
+}
+
+.top-ad {
+	display: none;
+	padding-bottom: $gutter;
+}
+
+.ad-type-3 {
+	display: none;
+}
+
+.logo-bajdaker-wrapper {
+	position: relative;
+	width: 78px;
+	height: 48px;
+	z-index:150;
+	display: block;
+	margin-left: auto;
+	border-radius: 50%;
+	.logo-bajdaker {
+		position: absolute;
+		border-radius: 50%;
+		width:100%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+	}
+	.logo-link{
+		position:absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		z-index: 150;
+		border-radius: 50%;
+	}
+}
+
+table {
+	tbody {
+		border: unset;
+	}
+}
+table tbody td {
+	border: unset;
+	padding: 3px;
+}
+
+table tbody th {
+	border: 1px solid blue;
+	padding: 3px;
+}
+
+table tbody tr {
+	border: unset;
+	padding: 3px;
+}
+.gsc-search-button-v2{
+	display: none;
+}
+.adapt-table{
+div{
+	border: 1px solid $dark-green;
+	font-size: 10px;
+}
 }
 
 /*--end---styles-for-form-buying----*/

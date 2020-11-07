@@ -21,17 +21,46 @@
 					<div class="date"> {{ post.date | date: '%d'}}/{{ post.date | date: '%m'}}/{{ post.date | date: '%Y' }}
 					</div>
 					{% endif %}
-					<p>{{ post.content | strip_html | truncatewords: 15 }}</p>
+					<p>{{ post.content | strip_html | truncatewords: 20 }}</p>
 				</a>
 			</div>
 		</div>
 	</div>
-	{% if page.category == 'product' %}
+	{% if post.trigger == 'form' %}
 	<div class="row mb-3">
 			<div class="price {{ post.class-price }}"></div>
 			<div class=" {{ post.class-money-ua }} "></div>
 			<div class=" {{ post.class-pack }} "> {{ post.pack-value }}</div>
 		<button class="{{ page.class-button }}"> {{ page.class-button-title }}</button>
+	</div>
+	{% endif %}
+
+	{% if post.trigger == 'multiple' %}
+	<div class="row mb-3">
+		<div class="text-mm {{ post.text-5mm }}"></div>
+		<div class="price {{ post.class-price-5mm }}"></div>
+		<div class=" {{ post.class-money-ua }} "></div>
+		<div class=" {{ post.class-pack }} "> {{ post.pack-value }} ;</div>
+		<div class="text-mm {{ post.text-6mm }}"></div>
+		<div class="price {{ post.class-price-6mm }}"></div>
+		<div class=" {{ post.class-money-ua }} "></div>
+		<div class=" {{ post.class-pack }} "> {{ post.pack-value }} ;</div>
+		<div class="text-mm {{ post.text-7mm }}"></div>
+		<div class="price {{ post.class-price-7mm }}"></div>
+		<div class=" {{ post.class-money-ua }} "></div>
+		<div class=" {{ post.class-pack }} "> {{ post.pack-value }} ;</div>
+		<div class="text-mm {{ post.text-8mm }}"></div>
+		<div class="price {{ post.class-price-8mm }}"></div>
+		<div class=" {{ post.class-money-ua }} "></div>
+		<div class=" {{ post.class-pack }} "> {{ post.pack-value }} ;</div>
+		<div class="text-mm {{ post.text-10mm }}"></div>
+		<div class="price {{ post.class-price-10mm }}"></div>
+		<div class=" {{ post.class-money-ua }} "></div>
+		<div class=" {{ post.class-pack }} "> {{ post.pack-value }} ;</div>
+		<div class="text-mm {{ post.text-12mm }}"></div>
+		<div class="price {{ post.class-price-12mm }}"></div>
+		<div class=" {{ post.class-money-ua }} "></div>
+		<div class=" {{ post.class-pack }} "> {{ post.pack-value }} ;</div>
 	</div>
 	{% endif %}
 </section>

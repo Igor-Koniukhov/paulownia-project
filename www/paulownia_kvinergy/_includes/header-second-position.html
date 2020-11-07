@@ -9,12 +9,7 @@
 			<div class="fa fa-search"></div>
 		</div>
 		<div class="search-field">
-			<form action="../search.html" id="cse-search-box">
-				<input name="cx" type="hidden" value="partner-pub-xxx:xxx"/>
-				<input name="cof" type="hidden" value="FORID:10"/>
-				<input name="ie" type="hidden" value="UTF-8"/>
-				<input name="q" placeholder="Поиск по сайту..." type="text"/>
-			</form>
+			{% include /search-script.html %}
 		</div>
 	</div>
 </header>

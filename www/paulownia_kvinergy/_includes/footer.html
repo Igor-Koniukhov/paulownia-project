@@ -6,9 +6,11 @@
 			</nav>
 			<nav class="soc">
 				<ul>
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-					<li><a href="#"><i class="fa fa-rss"></i></a></li>
+					<li><a href="https://www.facebook.com/organicplace_ua-2165881896822477"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="https://www.instagram.com/organicplace_ua/"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="https://www.youtube.com/channel/UCYn3cuKcu8hPK6Xmz3H9G4g/"><i class="fa fa-youtube-play"></i></a></li>
+					<!--<li><a href="#"><i class="fa fa-rss"></i></a></li>-->
+
 				</ul>
 			</nav>
 		</div>
@@ -23,7 +25,30 @@
 	</footer>
 </div>
 <script src="../js/scripts.min.js"></script>
+<script>
+
+	var swiper = new Swiper('.swiper-container_black-cover', {
+		slidesPerView: 'auto',
+		slidesPerGroup: 1,
+		spaceBetween: 5,
+		initialSlide: 0,
+		keyboard: {
+			enabled: true,
+		},
+		watchSlidesProgress: true,
+
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+</script>
 <script id="dsq-count-scr" src="//kvinerdji.disqus.com/count.js" async></script>
+
 </body>
 </html>
 

@@ -3,7 +3,7 @@
 @import "libs";
 
 %number {
-	content: '01';
+	content: 'хит продаж';
 	display: block;
 	position: absolute;
 	color: $accent-orange;
@@ -198,7 +198,7 @@
 	align-self: flex-start;
 	position: absolute;
 	bottom: 40px;
-	left: 90px;
+	left: 5px;
 }
 
 .swiper-pagination-bullet {

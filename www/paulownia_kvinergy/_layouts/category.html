@@ -8,28 +8,35 @@
 	<div class="main-page-wrapper">
 		<div class="cat-list">
 			<div class="container-cust">
+				<div class="ad top-ad">
+					{% include /ad-type-1.html %}
+				</div>
 				<div class="row">
 					<div class="col-md-8">
 						<div class="wrapper-content">
+{% if page.category == 'product' %}
+{% include /derz-vitiag.html %}
+{% endif %}
 							<div class="all-posts-header">{{ page.title }}</div>
 							<div class="cat-list-wrap">
-								{% for post in paginator.posts offset: 0 %}
-								{% include /category-list-item.html %}
-								{% endfor %}
+{% for post in paginator.posts offset: 0 %}
+{% include /category-list-item.html %}
+{% endfor %}
 							</div>
-							{% include /pagination-second.html %}
+{% include /pagination-first.html %}
 						</div>
 					</div>
 					<div class="col-md-4">
-						{% include /main-aside.html %}
+{% include /main-aside.html %}
 					</div>
 				</div>
-				{% include /pagination-first.html %}
+{% include /pagination-second.html %}
 			</div>
 		</div>
-		{% if page.category == 'product' %}
-		{% include /product-introduction-section.html %}
-		{% endif %}
+{% if page.category == 'product' %}
+{% include /product-introduction-section.html %}
+{% endif %}
 	</div>
+{% include /roll-up-button.html %}
 </main>
 {% include /footer.html %}
