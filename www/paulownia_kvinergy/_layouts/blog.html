@@ -1,6 +1,7 @@
 {% include /head-blog.html %}
 {% include /header-first-position.html %}
 {% include /header-second-position.html %}
+{% include /ad-type-1.html %}
 <main>
 	<div class="cat-list">
 		<div class="container-fluid">
@@ -12,15 +13,18 @@
 						{% include /category-list-item.html %}
 						{% endfor %}
 					</div>
-					<!--{% include /pagination-first.html %}-->
+					{% include /pagination-first.html %}
 				</div>
 				<div class="col-md-4">
 					{% include /aside.html %}
 				</div>
 			</div>
 		</div>
-		<!--{% include /pagination-second.html %}-->
+		{% include /pagination-second.html %}
 	</div>
 {% include /roll-up-button.html %}
 </main>
 {% include /footer.html %}
+
+</body>
+</html>

@@ -2,7 +2,7 @@
 if (isset ($_POST['contactFF'])) {
   $to = "ikoniukhov@gmail.com";
 
-  $from = "pavlovnya.1gb.ua";
+  $from = "kvinerdji.com";
   $subject = "Заполнена контактная форма на сайте ".$_SERVER['HTTP_REFERER'];
   $message = "Клиент: ".$_POST['nameFF']." ".$_POST['fathernameFF']."\nФИО Клиента: ".$_POST['nameFF']." ".$_POST['fathernameFF']." ".$_POST['surnameFF']."\nEmail клиента: ".$_POST['contactFF']."\nТелефон клиента: ".$_POST['telFF']."\nГород, область: ".$_POST['cityFF']."\nОтделение Новой Почты: ".$_POST['newpostFF']."\n\nСообщение: ".$_POST['projectFF']."\n\nНаименование: ".$_POST['nameProduct']."\nЦена(за единицу товара): ".$_POST['priceP']." ".$_POST['moneyGr']."\nKоличество: ".$_POST['numbers']." упаковка: ".$_POST['pack']."\nИтого: ".$_POST['multiplyOfOrder']."\n\nАдрес сайта: ".$_SERVER['HTTP_REFERER'];
 

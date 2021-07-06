@@ -1,25 +1,50 @@
 {% include /head-home.html %}
 {% include /header-first-position.html %}
 {% include /header-second-position.html %}
-{% include /header-third-position.html %}
-<main>
 
-	<div class="ad top-ad">
+<main>
+{% include /calculator.html %}
 {% include /ad-type-1.html %}
-	</div>
 {% include /slider-section.html %}
 {% include /home-section-introduction.html %}
+{% include /hostiq-adv-main.html %}
 {% include /home-first-section.html %}
+{% include /hostiq-adv-main.html %}
 {% include /type-one-section.html %}
 {% include /wood-section.html %}
 {% include /roll-up-button.html %}
-
-
 </main>
 
 {% include /footer.html %}
 
+<script>
 
+    var swiper = new Swiper('.swiper-container_black-cover', {
+        slidesPerView: 'auto',
+        slidesPerGroup: 1,
+        spaceBetween: 5,
+        initialSlide: 0,
+        keyboard: {
+            enabled: true,
+        },
+        autoplay: {
+            delay: 5000,
+        },
+        watchSlidesProgress: true,
+
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+
+</body>
+</html>
 
 
 

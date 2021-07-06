@@ -2,41 +2,77 @@
 {% include /header-first-position.html %}
 {% include /header-second-position.html %}
 <main>
-{% if page.category == 'product' %}
-{% include /form.html %}
-{% endif %}
-	<div class="main-page-wrapper">
-		<div class="cat-list">
-			<div class="container-cust">
-				<div class="ad top-ad">
-					{% include /ad-type-1.html %}
-				</div>
-				<div class="row">
-					<div class="col-md-8">
-						<div class="wrapper-content">
-{% if page.category == 'product' %}
-{% include /derz-vitiag.html %}
-{% endif %}
-							<div class="all-posts-header">{{ page.title }}</div>
-							<div class="cat-list-wrap">
-{% for post in paginator.posts offset: 0 %}
-{% include /category-list-item.html %}
-{% endfor %}
-							</div>
-{% include /pagination-first.html %}
-						</div>
-					</div>
-					<div class="col-md-4">
-{% include /main-aside.html %}
-					</div>
-				</div>
-{% include /pagination-second.html %}
-			</div>
-		</div>
-{% if page.category == 'product' %}
-{% include /product-introduction-section.html %}
-{% endif %}
-	</div>
-{% include /roll-up-button.html %}
+    {% include /ad-type-1.html %}
+    {% if page.category == 'product' %}
+    {% include /form.html %}
+    {% endif %}
+    {% if page.category == 'roots-plants' %}
+    {% include /form.html %}
+    {% endif %}
+    {% if page.category == 'garden-tools' %}
+    {% include /form.html %}
+    {% endif %}
+    <div class="main-page-wrapper">
+        <div class="cat-list">
+            <div class="container-cust">
+                <!--<div class="ad top-ad">
+                    {% include /ad-type-1.html %}
+                </div>-->
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="wrapper-content">
+                            <div class="all-posts-header">{{ page.title }}</div>
+                            <div class="cat-list-wrap">
+                                {% for post in paginator.posts offset: 0 %}
+                                {% include /category-list-item.html %}
+                                {% endfor %}
+                            </div>
+                            {% include /pagination-first.html %}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        {% include /main-aside.html %}
+                    </div>
+                </div>
+                {% include /pagination-second.html %}
+            </div>
+        </div>
+        {% if page.category == 'product' %}
+        {% include /product-introduction-section.html %}
+        {% endif %}
+    </div>
+    {% include /roll-up-button.html %}
 </main>
 {% include /footer.html %}
+
+<script src="https://unpkg.com/notie"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function notify(msg, typeMsg) {
+        notie.alert({
+            type: typeMsg,
+            text: msg
+        })
+    }
+    function notifyModel(icon, msg){
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+
+        Toast.fire({
+            icon: icon,
+            title: msg
+        })
+    }
+</script>
+
+</body>
+</html>

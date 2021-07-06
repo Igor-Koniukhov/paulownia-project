@@ -1,15 +1,19 @@
+
 AddDefaultCharset UTF-8
 Options -Indexes
 
 RewriteEngine On
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
 
 # RewriteCond %{HTTP:HTTPS} !=on [NC]
-# RewriteRule ^(.*)$ https://kvinerdji.com.ua/$1 [R=301,L]
+# RewriteRule ^(.*)$ https://kvinerdji.com/$1 [R=301,L]
 # SetEnvIf X-Forwarded-Proto https HTTPS=on
 
-RewriteCond %{HTTP_HOST} .
-RewriteCond %{HTTP_HOST} www.kvinerdji.com.ua [NC]
-RewriteRule (.*) https://kvinerdji.com.ua/$1 [R=301,L]
+# RewriteCond %{HTTP_HOST} .
+# RewriteCond %{HTTP_HOST} www.kvinerdji.com [NC]
+# RewriteRule (.*) https://kvinerdji.com/$1 [R=301,L]
 
 RewriteCond %{HTTP_USER_AGENT} wget [NC]
 RewriteRule .* - [F]

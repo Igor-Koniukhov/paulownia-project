@@ -3,7 +3,7 @@
 @import "libs";
 
 %number {
-	content: 'хит продаж';
+	content: '';
 	display: block;
 	position: absolute;
 	color: $accent-orange;
@@ -12,6 +12,7 @@
 	font-weight: 700;
 	font-family: 'Roboto', sans-serif;
 	right: 0;
+	left: 0;
 	top: 0;
 	opacity: 0.7;
 	z-index: 2;
@@ -98,13 +99,19 @@
 .n12::before {
 	@extend %number;
 }
+.n01, n02, n03{
+	position: relative;
+}
+.n01::before {
+	content: 'Хит продаж';
+}
 
 .n02::before {
-	content: '02';
+	content: 'Новинка';
 }
 
 .n03::before {
-	content: '03';
+	content: 'Товара нет';
 }
 
 .n04::before {
